@@ -1,0 +1,221 @@
+\section{Rigid body motion}
+{\color{myblue} \textbf{Note:} some of the notations in this part is mixed with the ones used by \emph{Amores} in \underline{Una base para el álgebra lineal}, in which column vectors are \emph{not} represented in {bold}.}\\
+
+
+\subsection{Basic definitions}
+A \textbf{rigid body} is a system of particles of mass $m_{\alpha}\ (\alpha=1,...,N)$ in which the \emph{distance} $|\vec{r}_{\alpha}-\vec{r}_{\beta}|$ between any two particles is \emph{constant}. In other words, a rigid body is a mechanical system of $N$ particles subject to the $N(N-1)/2$ time-independent holonomic constraints (that may or may not be mutually independent).\\
+In a generic rigid body it's always possible to construct a set of moving axes $\pazocal{S}$ (\textbf{body axes}), with respect to which all it's particles are \emph{fixed}.\\
+A generic rigid body has 6 d. of freedom, 3 for the coordinate of the origin of the body axes, and 3 for the matrix $O(t)\in \text{ SO(3)}$ that relates $\pazocal{S}'$ and $\pazocal{S}$.\\
+Centre of mass of a r.b.: $\vec{R}=\frac{1}{M}\scaleint{5ex}\rho(\vec{r})\vec{r}\dd[3]{\vec{r}},$ where $M=\scaleint{5ex}\rho(\vec{r})\dd[3]{\vec{r}}$.
+
+
+
+
+\subsection{Angular momentum and $T$ of a rigid body}
+Letting the centre of mass be the origin of $\pazocal{S}$:\\
+$\vec{r}_{\alpha}'=\vec{R}+\vec{r}_{\alpha},\ \vec{v}_{\alpha}'=\vec{V}+\omegab\times\vec{r}_{\alpha},\ \vec{P}=M\vec{V}$.\\
+$\vec{L}=M\vec{R}\times\vec{V}+\vec{L}_{CM}, \text{ where } \vec{L}_{CM}=\sum\limits_{\alpha}m_{\alpha}\vec{r}_{\alpha}\times(\omegab\times\vec{r}_{\alpha})$\\
+$T=\frac{1}{2}M\vec{V}^{2}+T_{\text{rot}}$, where $T_{\text{rot}}=\frac{1}{2}\sum\limits_{\alpha}m_{\alpha}(\omegab\times\vec{r}_{\alpha})^{2}$\\
+$\then \vec{L}_{\text{CM}}=\sum\limits_{\alpha}m_{\alpha}[r^{2}_{\alpha}\omegab-(\omegab\cdot\vec{r}_{\alpha})\vec{r}_{\alpha}],\ \ \ \ T_{\text{rot}}=\frac{1}{2}\omegab\cdot\vec{L}_{\text{CM}}$
+
+
+
+
+\subsection{Inertia tensor}
+\textbf{Note:} the inertia tensor $I$, without any subscript, is calculated w.r.t. the body axes (with $\text{CM}$ as it's origin). But it can also be calculated w.r.t other points (Steiner's theorem).
+\subsubsection*{Definition}
+The inertial tensor ($I\in\R^{3\times3}$) is a symmetric matrix with elements:\\
+$I_{ij}=\sum\limits_{\alpha}m_{\alpha}(\delta_{ij}r^{2}_{\alpha}-x_{\alpha i}x_{\alpha j})\then \mdoubleline{I_{ii}=m_{\alpha}({x_{\alpha j}^{2}+x_{\alpha k}^{2}})}{I_{ij}=-\sum\limits_{\alpha}m_{\alpha}x_{\alpha i}x_{\alpha j}}$\\
+If the r.b. is continuous: $\mdoubleline{I_{ii}=\scaleint{5ex}_{\Omega}\rho(\vec{r})(x_{j}^{2}+x_{k}^{2})\dd[3]{\vec{r}},\ i=1,2,3}{I_{ij}=-\scaleint{5ex}_{\Omega}\rho(\vec{r})x_{i}x_{j}\dd[3]{\vec{r}},\ 1\leq i\neq j\leq 3 }$
+
+\subsubsection*{Application}
+$T_{\text{rot}}=\frac{1}{2}\omegab\cdot(I\omegab)=\frac{1}{2}\omega^{\transpose} I\omega\ (\Leftarrow$ here $\omega$ is a column (lin. algebraic) vector.\\
+$\then T_{\text{rot}}=\frac{1}{2}I_{\vec{n}}\omega^{2}$, where $I_{\vec{n}}$ is the moment of inertia w.r.t. instantaneous axis of rotation $\vec{n}=\frac{\omegab}{\omega}$
+
+
+
+\subsubsection*{Steiner's theorem}
+The inertia moment computed w.r.t a point $P$ fixed w.r.t body axes is given as:\\
+$(I_{P})_{ij}=\sum\limits_{\alpha}m_{\alpha}(\delta_{ij}\tilde{\vec{r}}^{2}_{\alpha}-\tilde{x}_{\alpha i}\tilde{x}_{\alpha j}).$ Taking into account $\tilde{\vec{r}}_{\alpha}=\vec{r}_{\alpha}-\vec{a},\ \vec{a}=\overrightarrow{CP}$ $\then (I_{P})_{ij}=I_{ij}+M(\vec{a}^{2}\delta_{ij}-a_{i}a_{j}).$\\
+If $P$ is also fixed w.r.t $\pazocal{S}'$, then, placing $O'=P$, we can reduce the expressions:
+\\
+$\vec{V}=\omegab\times\vec{R},\ \ \ \ \vec{v}'_{\alpha}=\omegab\times\vec{r}'_{\alpha},\ \ \ \ \vec{L}=I'\omegab,\ (I'=I_{P}),\ \ \ \ T=\frac{1}{2}\omegab\cdot I'\omegab$.\\
+$I'$ can be computed from $I$: $I'_{ij}=I_{ij}+M(\vec{R}^{2}\delta_{ij}-X_{i}X_{j}),$ where $X_{h}$ are components of the vector $\vec{R}$.
+
+
+
+\subsubsection*{Principal axes of inertia}
+Let $A\in\text{SO(3)}$ be a constant change of basis matrix, and $\tilde{\vec{e}}_{i}=\sum\limits_{j}a_{ji}\vec{e}_{j}$.\\
+$\then x=A\tilde{x},\ \ \ \ \tilde{I}=A^{-1}IA=A^{\transpose}IA$.\\
+Since $I$ is a symmetric matrix, there is always a matrix $A\in \text{SO}(3)$, s.t. $\tilde{I}=A^{\transpose}IA$ is a diagonal matrix, in other words, the moment of inertia w.r.t the alternate body axes $\tilde{\vec{e}}_{i}$ (which are eigenvectors) is expressed as:\\
+$\tilde{I}=
+\begin{bmatrix}
+I_{1} &  & \\
+ & I_{2} & \\
+ & & I_{3} \\
+\end{bmatrix}$, with $I_{i}$ the eigenvalues corresponding to $\tilde{\vec{e}}_{i}$.\\
+In such case, $\tilde{\vec{e}}_{i}$ are \textbf{principal axes of inertia}, and $I_{i}$ are \textbf{principal moments of inertia}, which are the roots of the caracteristic polinomial of $I$.\\
+If $\vec{e}_{i}$ are p.a.i. then: $\vec{L}_{\text{CM}}=\sum\limits_{i}I_{i}\omega_{i}\vec{e}_{i},\ \ \ \ T_{\text{rot}}=\frac{1}{2}\sum\limits_{i}I_{i}\omega_{i}^{2}$.\\
+If the origin of a set of p.a.i. are also fixed in $\pazocal{S}'$, then $\vec{L}, T$ can be calculated with the expressions above, replacing $I$ by $I'$ w.r.t. the point $O'$.
+
+
+
+\subsubsection*{Clasification of r.b. in terms of the multiplicity of the eigenvalues $I_{i}$}
+\begin{tabular}{ l | c }
+  \textbf{Type of symmetry} & \textbf{Definition}\\[0.1em]
+  \hline\\[-2pt]
+  Asymmetric tops:  & $I_{j}\not= I_{i},\forall i\neq j,$ \\
+  Axially symmetric tops: & $I_{i}= I_{j}\neq I_{k},$ \\
+  Spherically symmetric tops:  & $I_{i}=I_{j},\ \forall i,j$ \\
+\end{tabular}
+
+
+
+\subsubsection*{Deduce $I_{i}$ of a rigid body by its invariance under transformations}
+\textbf{Note:} both $\Omega$ and $\rho$ have to be invariant under the transfomations.\\
+\begin{tabular}{ l | c }
+  \textbf{Inv. under} & \textbf{Behaviour of $I_{i}$}\\[0.1em]
+  \hline\\[-2pt]
+  $x_{i}\mapsto -x_{i}$ & $I_{ij}=0,\ \forall j\neq i$ \\[2pt]
+  $x_{i}\mapsto x_{j}$ & $I_{ii}=I_{jj},\ \ \ \ I_{ik}=I_{jk},\ k\neq i,j$ \\
+\end{tabular}\\
+In particular, for a \emph{solid of revolution} with homogeneous density, taking ${x_{3}}$ as the axis of rotation and arbitrary perpendicular axes ${x_{1}},{x_{2}}$, it satisfy the following invariances: $x_{1}\mapsto -x_{1},\ x_{2}\mapsto -x_{2},\ x_{1}\mapsto x_{2}$, and thus: \\
+$I_{11}\equiv I_{1}=I_{2}\equiv I_{22},\ I_{ij}=0\ (i\neq j)$, with: \\
+$I_{1}=\pi\rho\scaleint{5ex}_{z_{1}}^{z_{2}} z^{2}f^{2}(z)\dd{z}+\frac{\pi\rho}{4}\scaleint{5ex}
+_{z_{1}}^{z_{2}}f^{4}(z)\dd{z},$\hfill$ I_{3}\equiv I_{33}=\frac{\pi\rho}{2}\scaleint{5ex}_{z_{1}}^{z_{2}}f^{4}(z)\dd{z}.$
+
+
+
+\subsection{EOM of a rigid body}
+\subsubsection*{EOM in an inertial frame}
+If $\vec{F}=0$ then $\vec{N}$ computed at any point in $\pazocal{S}'$ is the same.\\
+A r.b. is in equilibrium in an $\pazocal{S}\iff \vec{F}=\vec{N}=0\iff \vec{F}=\vec{N}_{\text{CM}}=0$
+
+
+
+\subsubsection*{Forces due to a constant field $\mathbf{f}$}
+$\lambda_{\alpha}\equiv$``charge'' of a particle $\then \vec{F}_{\alpha}=\lambda_{\alpha}\vec{f}\then \vec{F}=\sum\limits_{\alpha}=\vec{f}\sum\limits_{\alpha}\lambda_{\alpha}=\Lambda\vec{f},$\\
+$ \vec{N}=\Big(\sum\limits_{\alpha}\lambda_{\alpha}\vec{r}'_{\alpha}\Big)\times\vec{f}$. \hfill($\downarrow$ Note that $\vec{X}$ is fixed in the body) \\
+If $\Lambda\neq0$, defining $\vec{X}=\frac{1}{\Lambda}\sum\limits_{\alpha}\lambda_{\alpha}\vec{r}'_{\alpha}=\frac{1}{\Lambda}\sum\limits_{\alpha}\lambda_{\alpha}(\vec{R}+\vec{r}_{\alpha})=\vec{R}+\frac{1}{\Lambda}\sum\limits_{\alpha}\lambda_{\alpha}\vec{r}_{\alpha}$\\
+we have that $\vec{N}=\vec{X}\times\vec{F}\then $ If $\Lambda\neq0$, then the total torque of the external forces coincides with the torque of the total external forces applied at the \emph{centre of charge}. (For the grav. field $\vec{g}$, $\lambda=m$ and C. charge is equal to CM).\\
+Torque of the external forces w.r.t. CM is $\vec{N}_{\text{CM}}=(\vec{X}-\vec{R})\times\vec{F}$ (for $\vec{g}$ it is zero). When $\Lambda=0$ we use the former equation for $\vec{N}$ and the torque of the external forces is independent of the reference point, since $\vec{F}=\Lambda\vec{f}=0$.
+
+
+
+\subsubsection*{Euler's equations}
+Euler's equations is the system $\mdoubleline{I_{1}\dot{\omega}_{1}-(I_{2}-I_{3})\omega_{2}\omega_{3}=N_{1},}{I_{2}\dot{\omega}_{2}-(I_{3}-I_{1})\omega_{1}\omega_{3}=N_{2},\\I_{3}\dot{\omega}_{3}-(I_{1}-I_{2})\omega_{1}\omega_{2}=N_{3}.}$ where $\vec{N}$ and $I$ are computed w.r.t. CM or a point fixed in the body and $\pazocal{S}'$. $\omegab$ and $\vec{N}$ are in a frame of p.a.i. (in general not inertial).\\
+If $\vec{N}=0$ and the origin $O'$ of $\pazocal{S}'$ is a point in the body, $\vec{L}_{O'}\equiv\vec{L}$ and $T$ are conserved. Similarly, if $\vec{N}_{\text{CM}}=0$ then $\vec{L}_{\text{CM}}$ and $T_{\text{rot}}$ are conserved.
+
+\smallskip
+
+\subsection{Inertial motion of a symmetric top}
+The angular velocity $\omegab$ of a set of axes w.r.t. to another is \emph{additive}.\\
+For an axially ($\vec{e}_{3}$) symmetric r.b., by E's eqns, the following conditions holds: \\
+$\omega_{3}$, $\Omega=\frac{I_{3}-I_{1}}{I_{1}}\omega_{3}$, $\omega_{0}=\sqrt{\omega_{1}^{2}+\omega_{2}^{2}}$, $\alpha=\arctan{(\omega_{0}/\omega_{3})}$ constants.\\
+In frame of body axes, the vector $\omegab$ rotates around $\vec{e}_{3}$ with $\Omega$ (traces out the \textbf{body cone} fixed w.r.t. body axes). The angular velocity $\Omega>0$ for $I_{3}>I_{1}$, and negative otherwise.\\
+Relative to body axes, $\vec{L}$ rotates with $\Omega$ around $\vec{e}_{3}$. $\vec{L}$ fixed relative to $\pazocal{S}'$.\\
+Relative to $\pazocal{S}'$, $\omegab$ traces out the \textbf{space cone} around $\vec{L}$ (fixed in $\pazocal{S}'$) with $\Omega_{p}$.\\
+The angle between $\vec{e}_{3}$ and $\omegab$ is $\alpha$, between $\vec{L}$ and $\vec{e}_{3}$ is $\theta=\arctan{\frac{I_{1}}{I_{3}}\tan\alpha}$.\\
+$\Omega_{p}=\frac{L}{I_{1}}=\omega\sqrt{1+\frac{I_{3}^{2}-I_{1}^{2}}{I_{1}^{2}}\cos^{2}\alpha},\ \omegab=\Omega_{p}\frac{\vec{L}}{L}-\Omega\vec{e}_{3}$.\\
+\input{content/figure/cones}
+
+
+
+\subsection{Miscellaneous}
+In general, for a solid of revolution rolling without sliding down a inclined ($\alpha$) plane around the principal axis $\vec{e}_{3}$, the horizontal acceleration is expressed as: $\ddot{x}=\frac{g\sin\alpha}{1+\frac{I_{3}}{Ma^{2}}}\then$.\\
+\subsubsection*{Inertia tensor of some regular bodies}
+\begin{tabular}{ l | c | c }
+	\textbf{Body} & \textbf{Definition} & \textbf{Inertia tensor}\\[0.1em]
+	\hline\\[-2pt]
+
+	\smol{Solid Sphere} & \smol{$x^{2}+y^{2}+z^{2}\leq r^{2}$} & \smol{$\frac{2}{5}mr^{2}
+	\begin{bmatrix}
+	1 &  & \\
+	 & 1 & \\
+	 & & 1 \\
+	\end{bmatrix}$}\\[7pt]
+	
+	\smol{Hollow Sphere} & \smol{$x^{2}+y^{2}+z^{2}= r^{2}$} & \smol{$\frac{2}{3}mr^{2}
+	\begin{bmatrix}
+	1 &  & \\
+	 & 1 & \\
+	 & & 1 \\
+	\end{bmatrix}$}\\[7pt]
+	
+	\smol{Cuboid} & \smol{$\mdoublelineone{-\frac{d}{2}\leq x\leq \frac{d}{2}\\[1pt]
+	-\frac{w}{2}\leq y\leq \frac{w}{2}\\[1pt]
+	-\frac{h}{2}\leq y\leq \frac{h}{2}}$} & 
+	\smol{$\frac{m}{12}\begin{bmatrix}
+h^{2}+d^{2} &  & \\
+ & w^{2}+d^{2} & \\
+ & & h^{2}+w^{2} \\
+\end{bmatrix}$}\\[7pt]
+	
+	\smol{Cylinder} & \smol{$\mdoublelineone{x^{2}+y^{2}\leq r^{2}\\[1pt]
+	-\frac{h}{2}\leq z\leq \frac{h}{2}}$} & 
+	\smol{$\frac{m}{12}\begin{bmatrix}
+3r^{2}+h^{2} &  & \\
+ & 3r^{2}+h^{2} & \\
+ & & 6r^{2} \\
+\end{bmatrix}$}\\[7pt]
+
+	\smol{Rod about end} & \smol{$\mdoublelineone{x^{2}+y^{2}\leq r^{2}\\[1pt]
+	0\leq z\leq h\\[1pt]
+	h>> r\\[1pt]
+	\omegab\parallel \vec{x}}$} &
+	\smol{$\frac{1}{3}ml^{2}\begin{bmatrix}
+1 &  & \\
+ & 0 & \\
+ & & 1 \\
+\end{bmatrix}$}\\[7pt]
+
+	\smol{Rod about center} & \smol{$\mdoublelineone{x^{2}+y^{2}\leq r^{2}\\[1pt]
+	-\frac{h}{2}\leq z\leq \frac{h}{2}\\[1pt]
+	h>> r\\[1pt]
+	\omegab\parallel \vec{x}}$} &
+	\smol{$\frac{1}{12}ml^{2}\begin{bmatrix}
+1 &  & \\
+ & 0 & \\
+ & & 1 \\
+\end{bmatrix}$}
+\end{tabular}\\
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,103 @@
+\section{Lagrangian \& Hamiltonian}
+
+
+
+\subsection{Basic Definitions}
+$F[y]=\int\limits_{x_{1}}^{x_{2}}dx$, where $F\equiv$functional, and $f\equiv$ density.
+
+
+
+\subsection{Important equations and theorems}
+\subsubsection*{Euler-Lagrange equations:}$\frac{d}{dx}\partials{f}{y'}-\partials{f}{y}=0;\ \frac{\text{d}}{\text{d}t}\partials{L}{\dotv{q}}-\partials{L}{\vec{q}}$. If $\partials{f}{x}=0\then y'\partials{f}{y'}-f$ is constant. If $\partials{f}{y}=0\then \partials{f}{y'}$ is constant. Two densities differing by a total derivative has the same E-L eqn.
+\\[0.5em]
+\subsubsection*{Hamilton's principle for $N$ particles:}
+$L(t,\vec{r}_{1},...,\vec{r}_{N},\dotv{r}_{1},...,\dotv{r}_{N})=\frac{1}{2}\sum\limits_{i}^{N}m_{i}\dotv{r}_{i}^{2}-V(t,\vec{r}_{1},...,\vec{r}_{N})$.\\ If $\partials{L}{t}=0\then \sum\limits_{i}\dotv{r}_{i}\partials{L}{\dotv{r}_{i}}-L=T+V$ conserved.
+\\
+If $\partials{L}{x_{i}}=0\then \partials{L}{\dot{x}_{i}}$ is conserved.
+\\
+\subsubsection*{Canonical momenta:} $p_{i}=\partials{L}{\dot{q}_{i}}\then \dot{p}_{i}=\partials{L}{q_{i}}$. If $p_{i}=0$ then the coordinate $q_{i}$ is \emph{cyclic} or \emph{ignorable}.
+\\
+\subsubsection*{Hamiltonian:} $H=\sum\limits_{i}^{n}\dot{q}_{i}\partials{L}{\dot{q}_{i}}-L=\sum\limits_{i}^{n}p_{i}\dot{q}_{i}-L=T+V(\Leftarrow$ If natural).
+\\
+\subsubsection*{Hamilton's canonical eqns.:} $\dotv{q}=\partials{H}{\vec{p}}(t,\vec{q},\vec{p});\ \dotv{p}=-\partials{H}{\vec{q}}(t,\vec{q},\vec{p})$
+\subsubsection*{Jacobi-Poisson Theorem}
+If $f$ and $g$ are two first integrals of H's canonical equations, so is $\acomm{f}{g}$.
+
+
+\subsection{Procedures}
+\subsubsection*{Find the EOM of $N$ particles with $l$ holonomic constraints:}
+1. Introduce $3N-l=n$ generalized coordinates $(q_{1},...,q_{n})=\vec{q}$ to the constraint manifold $\{\Phi_{1},...,\Phi_{l}(t,\vec{q})=0\}$.\\
+2. Express $T=\frac{1}{2}\sum\limits_{i}^{N}m_{i}\dotv{r}_{i}^{2}$ and $V$ in terms of $(t,\vec{q},\dotv{q})\then $\\
+\centerline{$T\equiv T(t,\vec{q},\dotv{q});\ V\equiv V(t,\vec{q})$.}\\
+3. E-L equations of $L=T-V$ are the $n$ equations of motion in coordinates $q_{i}$\\
+\centerline{$\then \ELt{L}{{q}_{i}},\ i=1,...,n$.}\\
+4. Constraint forces on $i$-th particle are expressed as:\\
+\centerline{$\vec{F}_{i}^{(c)}=m_{i}\ddot{\vec{r}}_{i}+\partials{V}{\vec{r}_{i}},\ i=1,...,N$.}
+
+\subsubsection*{Write Hamilton's canonical equations:}
+1. Calculate the canonical momenta $p_{i}=\partials{L}{\dot{q}_{i}}(t,\vec{q},\dotv{q}),\ i=1,...,n$.\\
+2. Express the generalized velocities as $\dot{q}_{i}\equiv\dot{q}_{i}(t,\vec{q},\vec{p}),\ i=1,...,n$. \\
+3. Compute the Hamiltonian $H(t,\vec{q},\vec{p})=\vec{p}\cdot\dotv{q}(t,\vec{q},\vec{p})-L(t,\vec{q},\vec{p})$.\\
+4. The partial derivatives of $H$ w.r.t the variables $q_{i},p_{i}$ are the canonical equations. The first $n$ equations are the ones in step 2, the rest are $\dot{p}_{i}=-\partials{H}{q_{i}},\ i=1,...,n.$ There are in total $2n$ equations.
+
+
+
+\subsection{Hamiltonian conservations}
+$\partials{H}{\dot{q}_{i}}=0\then p_{i}$ const. $\partials{H}{p_{i}}=0\then q_{i}$ const.\\
+$\frac{\text{d}H}{\text{d}t}=\partials{H}{t}+\partials{H}{\vec{q}}\dotv{q}+\partials{H}{\vec{p}}\dotv{p}=\partials{H}{t}\then $ If $\partials{H}{t}=0\then H$ const. Moreover, since $\partials{H}{t}=-\partials{L}{t}$, $H$ is conserved $\iff L$ indep. of $t$.
+
+
+
+\subsection{Poisson brackets}
+$(\vec{q},\vec{p})\equiv$``phase space'', for every smooth function $f({t,\vec{q},\vec{p}})$ the following holds: $\dot{f}=\partials{f}{t}+\partials{f}{\vec{q}}\dotv{q}+\partials{f}{\vec{p}}\dotv{p}=\partials{f}{t}+\partials{f}{\vec{q}}\partials{H}{\vec{p}}+\partials{f}{\vec{p}}\partials{H}{\vec{q}}=\partials{f}{t}+\acomm{f}{H}$\\
+Being $\acomm{f}{g}\equiv\partials{f}{\vec{q}}\partials{g}{\vec{p}}-\partials{f}{\vec{p}}\partials{g}{\vec{q}}=\sum\limits_{i=1}^{n}\Big(\partials{f}{q_{i}}\partials{g}{p_{i}}-\partials{f}{p_{i}}\partials{g}{q_{i}}\Big),$ $f,g$ any function of $(t,\vec{q},\vec{p})$.
+
+
+
+\subsubsection*{Poisson brackets properties}
+$\acomm{f}{g}=-\acomm{g}{f}$, in particular $\{f,f\}=0$.\hfill(Antisymmetry)\\
+$\acomm{\lambda f+\mu g}{h}=\lambda\acomm{f}{h}+\mu\acomm{g}{h}$.\hfill(Bilinearity)\\
+$\acomm{fg}{h}=f\acomm{g}{h}+g\acomm{f}{h}$.\hfill(Leibniz's rule)\\
+$\acomm{\acomm{f}{g}}{h}+\acomm{\acomm{g}{h}}{f}+\acomm{\acomm{h}{f}}{g}=0$.\hfill (Jacobi identity)\\
+$\partials{}{t}\acomm{f}{g}=\acomm{\partials{f}{t}}{g}+\acomm{f}{\partials{g}{t}}\then \frac{\text{d}}{\text{d}t}\acomm{f}{g}=\acomm{\dot{f}}{g}+\acomm{f}{\dot{g}}$\hfill(J-P id.)
+$\dot{q}_{i}=\acomm{q_{i}}{H},\ \dot{p}_{i}=\acomm{p_{i}}{H};\ \acomm{q_{i}}{q_{j}}=\acomm{p_{i}}{p_{j}}=0,\ \acomm{q_{i}}{p_{j}}=\delta_{ij}$
+
+
+\subsubsection*{Canonical change of variable}
+Consists in changing $(\vec{q},\vec{p})\mapsto(\tilde{\vec{q}},\tilde{\vec{p}})$, s.t. $\exists \tilde{H}$ Hamiltonian where $\dot{\tilde{\vec{q}}}=\partials{\tilde{H}}{\tilde{\vec{p}}}$ and $\dot{\tilde{\vec{p}}}=-\partials{\tilde{H}}{\tilde{\vec{q}}}$.\\
+The changes $
+\left\{
+\begin{aligned}
+(\vec{q},\vec{p})\mapsto(\vec{p},\vec{q}),\ \tilde{H}(t,\tilde{\vec{q}},\tilde{\vec{p}})=-H\tqp\\
+(\vec{q},\vec{p})\mapsto(\vec{p},-\vec{q}),\ \tilde{H}(t,\tilde{\vec{q}},\tilde{\vec{p}})=H\tqp
+\end{aligned}
+\right.
+$ are canonical.\\
+In general, a transformation is canonical $\iff 
+\left\{
+\begin{aligned}
+\acomm{\tilde{q}_{i}}{\tilde{q}_{j}}=\acomm{\tilde{p}_{i}}{\tilde{p}_{j}}=0\\
+\acomm{\tilde{q}_{i}}{\tilde{p}_{j}}=\lambda\delta_{ij},\ \lambda\neq0.
+\end{aligned}
+\right.
+$\\
+If $\lambda=1$ then $(\tilde{\vec{q}},\tilde{\vec{p}})$ are \emph{canonically conjugate}. \\
+If $\lambda\neq1$, the change $(\vec{q},\vec{p})\mapsto(\tilde{\vec{q}},\tilde{\vec{p}}/\lambda)$ is canonically conjugate.
+\subsubsection*{Hamilton-Jacobi theory} It's always possible to find a can. transf. that has $\tilde{H}=0\then \dot{\tilde{\vec{q}}}=0=\dot{\tilde{\vec{p}}}$\\
+$\then \tilde{\vec{p}}=\tilde{\vec{p}}_{0};\ \tilde{\vec{q}}=\tilde{\vec{q}}_{0}$ constant solutions, and reversing the transformation we will get the original $\vec{q}_{0},\vec{p}_{0}$ constant solutions of the original $H$.
+
+
+
+\subsection{Misc.}
+\subsubsection*{Charged particle mass in an EM field $\Phi$ (\bfemph{not} natural):}
+$
+\left\{
+\begin{aligned}
+L(t,\vec{r},\dot{\vec{r}})=\frac{1}{2}m\dot{\vec{r}}^2-e\Phi(t,\vec{r})+e\dot{\textbf{r}}\cdot \textbf{A}(t,\textbf{r})\\
+H(t,\vec{r},\vec{p})=\frac{1}{2m}(\vec{p}-e\vec{A}(t,\vec{r}))^2+e\Phi(t,\vec{r})\\p_i=m\dot{x}_i+eA_i(t,\vec{r}),\ i=1,2,3.
+\end{aligned}
+\right.
+$
+
+
+

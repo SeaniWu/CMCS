@@ -1,0 +1,209 @@
+\section{Special relativity}
+\subsection{Principle of special relativity}
+In Galilean relativity, the acceleration of a particle is the same in all inertial frames $\then $ all inertial frames are \emph{equivalent} from the point of view of Newtonian mechanics.
+\smallskip
+
+
+\textbf{Postulates of special relativity:}\\
+1. The laws of physics are the same in all inertial frames (\textbf{relativity principle}).\\
+2. The speed of electromagnetic waves in vacuum is universal: $c=\frac{1}{\sqrt{\epsilon_{0}\mu_{0}}}$.\\
+3. (Implication of 1. \& 2.) speed of electromagnetic waves in vacuum is $c$ in all inertial frames.
+
+
+
+\subsection{Lorentz transformations}
+\subsubsection*{Basic equations of transformation}
+We will use the notation $x_{0}\equiv ct,\ x_{0'}\equiv c t'$ as the ``time coordinate'' of space-time. The Lorentz factor for a speed of $v$ is defined as:\\
+\centerline{$\gamma(v)=\frac{1}{\sqrt{1-\frac{v^{2}}{c^{2}}}}$, dimensionless.}
+The L. transformation relating the frames $x_{\mu}$ and $x_{\mu}'$, (the velocity of $O'$ w.r.t. $O$ is $v\vec{e}_{1}$), is:\\
+\centerline{$t'=\gamma(v)\Big(t-\frac{vx_{1}}{c^{2}}\Big),\ \ \ \ x_{1}'=\gamma(v)(x_{1}-vt),\ \ \ \ x_{k}'=x_{k},\ \ \ \ k=2,3$}
+\subsubsection*{Consequences of L.T.}
+1. The relative speed between two inertial frames is strictly less than $c$ in vacuum.\\
+2. The speed of all mass is less than $c$.\\
+3. The propagation speed any information cannot exceed $c$.
+
+
+
+
+\subsubsection*{General transformations}
+The general L.T. with $\vec{v}$ the velocity of $O'$ w.r.t. $\pazocal{S}$ is given by:\\
+\centerline{$t'=\gamma(v)\Big(t-\frac{\vec{v}\cdot \vec{x}}{c^{2}}\Big),\ \ \ \ \vec{x}'=\vec{x}+(\gamma(v)-1)\frac{\vec{v}\cdot \vec{x}}{v^{2}}-\gamma(v)\vec{v}t$}
+
+(\emph{Relativistic law for the addition of velocities.}) For a particle with constant velocity $\vec{u}=u\vec{e}_{1}$ w.r.t. $\pazocal{S}$, its velocity w.r.t. $\pazocal{S}'$ (whose origin moves at constant  velocity $v\vec{e}_{1}$) is also constant, with components:\\
+\centerline{$u_{1}=\frac{u'_{1}+v}{1+\frac{u_{1}'v}{c^{2}}},\ \ \ \ u_{k}=\frac{u'_{k}}{\gamma(v)\Big(1+\frac{u_{1}'v}{c^{2}}\Big)},\ \ \ \ (k=2,3)$,}
+the reversed relations can be obtained by changing the signs and switching primes.
+
+
+
+\subsubsection*{Intervals}
+The quadratic form $c^{2}t^{2}-\vec{x}^{2}\equiv x_{0}^{2}-\vec{x}^{2}$ is \emph{invariant} under L.T..\\
+The square of the \textbf{interval} between two events with s-t coordinates $x_{\mu}$ and $x_{\mu}+\Delta x_{\mu}$ is defined as:\\
+\centerline{$\Delta s^{2}=c^{2}\Delta t^{2}-\sum\limits_{i=1}^{3}\Delta x_{i}^{2}=\Delta x_{0}^{2}-\sum\limits_{i=1}^{3}\Delta x_{i}^{2}\equiv \Delta x_{0}^{2}-\Delta \vec{x}^{2}$;}
+said interval is invariant under L.T.$\then \Delta s^{2}=\Delta x_{0}^{2}-\Delta \vec{x}^{2}=\Delta (x_{0}')^{2}-\Delta (\vec{x}')^{2}$.\\
+The interval between two events is \emph{time-like} if $\Delta s^{2}>0$, \emph{light-like} if $\Delta s^{2}=0$, and \emph{space-like} if $\Delta s^{2}<0$.
+\smallskip
+
+
+If the interval between two events is \emph{time-like}:\\
+Let the original $\pazocal{S}$ s.t. $\Delta x_{2},\ \Delta x_{3}=0$, and a second $\pazocal{S}'$ with velocity $\frac{\Delta x_{1}}{\Delta t}\vec{e}_{1}$. Then, in $\pazocal{S}'$ the two events occur at the same point in space, with time interval (\textbf{proper time lapse}) $\Delta\tau=\frac{\Delta s}{c}=\Delta t\sqrt{1-\frac{\Delta \vec{x}^{2}}{\Delta x_{0}^{2}}}$.
+\smallskip
+
+
+If the interval between two events is \emph{space-like}:\\
+Let the original $\pazocal{S}'$ s.t. $\Delta x_{2},\ \Delta x_{3}=0$, and a second $\pazocal{S}'$ with velocity\\ $\frac{c^{2}\Delta t}{\Delta x_{1}}\vec{e}_{1}=\frac{c \Delta x_{0}}{\Delta x_{1}}\vec{e}_{1}$. Then in $\pazocal{S}'$ the two events occur simultaneously, with distance (\textbf{proper distance}) $\sqrt{-\Delta s^{2}}=|\Delta x'_{1}|$. The proper distance is less or equal to the spatial distance $|\Delta \vec{x}|$ in any other inertial frame.
+\smallskip
+\subsubsection*{Minkowski product}
+For two s-t coordinates in $\pazocal{S}$, $x=(x_{0},\vec{x})$ and $y=(y_{0},\vec{y})\in\R^{4}$, their \emph{Minkowski product}:\\
+\centerline{$x\odot y\equiv x_{0}y_{0}-\vec{x}\cdot \vec{y}\ \ \ \ \then\ \ \ \ x^{2}\equiv x\odot x=x_{0}^{2}-\vec{x}^{2},\ \ \ \ \Delta x\odot\Delta x=\Delta s^{2}$}
+is also invariant under L.T.. The vector space $(\R^{4},\odot)$ is the \emph{Minkowski space}.\\
+
+
+\subsubsection*{Lorentz group}
+The procedure of relating the s-t coordinates of an event in two reference frames $\pazocal{S}$ and $\pazocal{S}'$ ($\pazocal{S}'$ moves at $\vec{v}$) is the following:\\
+\centerline{$\pazocal{S}\to\pazocal{S}''\to\pazocal{S}'''\to\pazocal{S}'$}
+1. Consider $\pazocal{S}''$ at rest w.r.t. $\pazocal{S}$, whose $x_{i}''$ is in the direction of $\vec{v}\then x''=R_{1}x$, where $R_{1}\in\R^{4\times 4}$ but only rotates the spatial coordinates.\\
+2. $\pazocal{S}'''$ is the frame that moves with $\vec{v}=v\vec{e}_{1}''$ away from $\pazocal{S}''\then x'''=L(v)x''$. $L(v)$ is the ``basic'' L.T. \\
+3. The frames $\pazocal{S}'''$ and $\pazocal{S}'$ are related by a rotation $\then x'=R_{2}x'''$.\\
+Combining everything we get\\
+\centerline{$x'=R_{2}L(v)R_{1}x\equiv \Lambda x$}
+the transformation $\Lambda\in \R^{4\times4}$ is the \emph{general Lorentz tranformation}. It is the most genearl form of L.T. that relates the space-time coord. of an event in two reference frames whose space-time origin coincide ($t=x_{i}=0\iff t'=x\i'=0$). If the space-time origin of the frames differs by a vector $a\in \R^{4}$, then the transformation $x'=\Lambda x+a$ is called the \emph{Poincaré tr.}.\\
+The basic L.T. can be expressed as a matrix:\\
+\centerline{$L(v)=\begin{bmatrix}
+\gamma(v) & -\beta(v)\gamma(v) & 0 & 0\\
+-\beta(v)\gamma(v) & \gamma(v) & 0 & 0\\
+0 & 0 & 1 & 0 \\
+0 & 0 & 0 & 1
+\end{bmatrix},\ \ \ \ \beta(v)\equiv\frac{v}{c}$}
+The bilinear form associated with the M. product is:\\
+\centerline{$G=
+\begin{bmatrix}
+1\\
+& -1\\
+&& -1\\
+&&& -1
+\end{bmatrix},\ \ \ \ \then \ \ \ \ x\odot y=x^{\transpose}G \ y,\ \ \ \ \then \ \ \ \ \Lambda^{\transpose}G\Lambda=G
+$}
+The Minkowski product (and the square of intervals), are invariant under general Lorentz transformations. The set of matrices $\Lambda$ that satisfy the equation above form the \emph{Lorentz group}.\\
+Performing the change of variable:\\
+\centerline{$\beta(v)=\tanh{\phi}\then \gamma(v)=\cosh{\phi}\then 
+L(v)=\begin{bmatrix}
+\cosh{\phi} & -\sinh{\phi} & 0 & 0\\
+-\sinh{\phi} & \cosh{\phi} & 0 & 0\\
+0 & 0 & 1 & 0 \\
+0 & 0 & 0 & 1
+\end{bmatrix},
+$}
+And the result of successive Lorentz boosts with speeds $v_{1}=c\tanh{\phi_{1}}$ and $v_{2}=c\tanh{\phi_{2}}$ is another L. boost with rapidity $\phi_{1}+\phi_{2}$:\\
+\centerline{$v=c\tanh{(\phi_{1}+\phi_{2})}\equiv \frac{v_{1}+v_{2}}{1+\frac{v_{1}v_{2}}{c^{2}}}$ similar to the eqn. of velocity of a prtcl.}
+
+
+\subsection{Dilations and contractions}
+The \textbf{proper time} measured in $\pazocal{S}$ is larger than the \textbf{coordinate time} measured in $\pazocal{S}'$. In other words, from an observer at rest with $\pazocal{S}$, the time recorded by a watch at rest with $\pazocal{S}'$, $t'$, is slower than the proper time $t$ that he has measured. We say that $t'$ dilated, the dilation effect is symmetrical in \textbf{inertial frames}:\\
+\centerline{$t\equiv \frac{t'}{\sqrt{1-\frac{v^{2}}{c^{2}}}}=\frac{t'}{\gamma(v)}>t'$}\\
+For a particle following a trajectory $\vec{r}\equiv \vec{r}(t)$, the proper time increment (time according to an observer at rest with said particle) is expressed as:\\
+\centerline{$\dd{\tau}=\sqrt{1-\frac{\vec{v}^{2}(t)}{c^{2}}}\then \Delta\tau(C)=\int\limits_{t_{1}}^{t_{2}}\sqrt{1-\frac{\vec{v}^{2}(t)}{c^{2}}}\dd{t}=\int\limits_{t_{1}}^{t_{2}}\sqrt{1-\frac{\dotv{r}^{2}}{c^{2}}}\dd{t}$}
+being $C$ the path taken by the particle. $\Delta \tau\leq \Delta t$ and is equal only if $\vec{v}=0,\ \forall t$.\\
+
+Lorentz-Fitzgerald contraction has to do with contraction of an object that's at rest with $\pazocal{S}'$ but in motion w.r.t. to $\pazocal{S}$ in the direction of its velocity. In mathematical terms, the length component in the direction of its movement, $x_{1}$, is contracted:\\
+\centerline{$\Delta x_{1}'\equiv l_{0}=\gamma(v)(\Delta x_{1}-v\Delta t)\equiv \gamma(v)l\then l=\frac{l_{0}}{\gamma(v)}=l\sqrt{1-\frac{\vec{v}^{2}}{c^{2}}}<l_{0},$}
+where $l_{0}$ is the \textbf{rest length} or the length directly measured by an observer at rest with the object.
+
+
+
+\subsection{Four-velocity and four-momentum}
+The \emph{four-velocity} is defined as:\\
+\centerline{$u=\dv{x}{\tau}\in \R^{4},\ \ \ \ x\equiv\text{``s-t coordinates''},\ \dd{\tau}=\sqrt{1-\frac{\vec{v}^{2}}{c^{2}}}\dd{t}\equiv \frac{\dd{t}}{\gamma(v)}$}
+and it has the following properties:\\
+\centerline{$u=\gamma(v)(c,\vec{v})\in \R^{4},\ \ \ \ u'=\Lambda u,\ \ \ \ u^{2}=c^{2}.$}
+The four-momentum is: $\ \ \ \ \ \ \ \ p=mu\then p^{2}=m^{2}c^{2}$\\
+Here we will use the vector $\vec{p}=(p_{1},p_{2},p_{3})\equiv m\gamma(v) \vec{v}\in \R^{3}$ which coincides with the non-r. momentum only when $v\to 0$. Then:\\
+\centerline{$p_{0}=\sqrt{\vec{p}^{2}+m^{2}c^{2}},\then \vec{v}=\frac{c\vec{p}}{p_{0}}$}\\
+and the relativistic kinetic energy is given as:\\
+\centerline{$T=cp_{0}-mc^{2}\equiv mc^{2}(\gamma(v)-1)\ \ \ \ \then \ \ \ \ p_{0}=\frac{1}{c}(mc^{2}+T)$}
+\subsubsection*{Conservation of four-momentum}
+\centerline{$p=\text{const.}\iff cp_{0}=mc^{2}+T=\text{const.}\iff p\i=m\gamma(v)v\i=\text{\text{const.}}$}
+The total four-momentum of a system of $N$ particles is:\\
+\centerline{$P=\sum\limits_{n=1}^{N}p_{n}\equiv (P_{0},\vec{P}),\ \ \ \ P_{0}=\sum\limits_{n=1}^{N}p_{n,0}\equiv c\sum\limits_{n=1}^{N}m_{n}\gamma(v_{n}),$}
+\centerline{$\vec{P}=\sum\limits_{n=1}^{N}\vec{p}_{n}\equiv \sum\limits_{n=1}^{N}m_{n}\gamma(v_{n})\vec{v}_{n}.$}\\
+The conservation of $P$ during the collision of said $N$ particles is verified even when the collision is not elastic:\\
+\centerline{$P_{i}=P_{f}\iff (Mc^{2}+T)\i=(Mc^{2}+T)_{f}$}
+During the process of collision, The mass and the kinetic energy can vary together with the relation:\\
+\centerline{$\Delta T=-\Delta (Mc^{2})$}
+The total relativistic energy can be defined as:\\
+\centerline{$E=cP_{0}=mc^{2}+T=mc^{2}\gamma(v)=c\sqrt{\vec{p}^{2}+m^{2}c^{2}}=mc^{2}\sqrt{1+\frac{\vec{p}^{2}}{m^{2}c^{2}}}$}
+\centerline{$\then P=(E/c,\vec{P})\then \vec{v}=\frac{c^{2}\vec{p}}{E}$}
+
+
+
+\subsection{Massless particles}
+For particle with mass $m\to 0$, its energy is $E=c|\vec{p}|$ and its four-momentum:\\
+\centerline{$p=(|\vec{p}|,\vec{p})\then \vec{v}=c\frac{\vec{p}}{|\vec{p}|}$.}
+
+
+
+
+\subsubsection*{Motion of a photon}
+\textbf{Photon} is the only massless particle known. The relation between its energy and the frequency $\omega$ of its associated EM wave is given as:\\
+\centerline{$E= \amshbar\omega\equiv hv=\frac{hc}{\lambda},\ \ \ \ \lambda\equiv\text{``wavelength''}$}
+The wave vector is defined as:\\
+\centerline{$\omega=c|\vec{k}|,\ \ \ \ \vec{v}=c\frac{\vec{k}}{|\vec{k}|}\ \ \ \ \then\ \ \ \ \vec{p}= \amshbar\vec{k}$}
+We can define the \textbf{wave four-vector}: $\ \ \ \ k=(k_{0},\vec{k})=(|\vec{k}|,\vec{k})=\frac{p}{ \amshbar}\in\R^{4}$.
+The wave four-vector is proportional to the four-momentum, therefore, if $\pazocal{S}'$ is another inertial system and $x'=\Lambda x$ we have: $\ \ \ \ k'=\Lambda k$
+
+
+\subsection{Longitudinal Doppler effect}
+If an EM wave propagates in the direction of the relative motion between the observer $\pazocal{S}$ and the source $\pazocal{S}'$
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

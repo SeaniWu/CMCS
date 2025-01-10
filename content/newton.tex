@@ -1,0 +1,146 @@
+\section{Newtonian Mechanics}
+
+
+
+\subsection{Newton's Laws}
+   \textbf{1.} In the absence of external forces, the momentum of a particle remains constant.\\
+   \textbf{2.} If an external force $\vec{F}$ acts on a particle, the rate of variation of its momentum is give by $\dot{\vec{p}}=\vec{F}\iff \vec{F}=m\ddot{\vec{r}}(\Leftarrow$ eqn. of motion of a particle).
+
+
+
+
+\subsection{Conservation laws}
+
+
+
+\subsubsection*{Basic definitions}
+$\vec{L}=\vec{r}\times\vec{p}=m\vec{r}\times\dotv{r},\ \ \ \ \dotv{L}=\vec{N}=\vec{r}\times\vec{F}=0\iff \vec{F}\parallel\vec{r}$.\\
+A force is central $\iff \vec{F}=g(t,\vec{r},\dotv{r})\vec{r}$. Let $T=\frac{1}{2}m\dotv{r}^{2}$, then $\dv{T}{t}=m\dotv{r}\ddot{\vec{r}}=\vec{F}\dotv{r}$\\
+Kinetic energy is conserved $\iff$ $\vec{F}\perp\dotv{r},\ \forall t$.\\
+A force is conservative $\iff \vec{F}(\vec{r})=-\nabla V(\vec{r})\equiv-\sum\limits_{i=1}^{3}\partials{V(\vec{r})}{x_{i}}\vec{e}_{i}\equiv-\partials{V(\vec{r})}{\vec{r}}$.\\
+If $\vec{F}$ conservative, then $E=T+V$ conserved.\\
+A force is irrotational $\iff \exists V(t,\vec{r})$ s.t. $\vec{F}(t,\vec{r})=-\partials{V(t,\vec{r})}{\vec{r}}\then \dv{E}{t}=\partials{V}{t}$.
+
+
+
+\subsubsection*{Gravitational and Electrostatic forces}
+$\vec{F}=f(r)\vec{e}_{r}$\\
+$f(r)=-\frac{GMm}{r^{2}},\ V(r)=-\frac{GMm}{r}\then \vec{a}=\frac{\vec{F}}{m}=-\frac{GM}{r^{3}}\vec{r}$ independent of $m$.\\
+$f(r)=k\frac{qQ}{r^{2}},\ V(r)=k\frac{qQ}{r}$.\\
+In general, for forces between a particle and a continuous distribution of mass/charge:\\
+$\vec{F}(\vec{r})=-Gm\scaleint{5ex}\rho(\vec{r}')\frac{\vec{r}-\vec{r}'}{|\vec{r}-\vec{r}'|^{3}}\dd[3]{\vec{r}}=-m\partials{\Phi(\vec{r})}{\vec{r}},\ \Phi(\vec{r})=-G\scaleint{5ex}\frac{\rho(\vec{r'})}{|\vec{r}-\vec{r}'|}\dd[3]{\vec{r}}$\\
+$\vec{F}(\vec{r})=-kq\scaleint{5ex}\rho(\vec{r}')\frac{\vec{r}-\vec{r}'}{|\vec{r}-\vec{r}'|^{3}}\dd[3]{\vec{r}}=-q\partials{\Phi(\vec{r})}{\vec{r}},\ \Phi(\vec{r})=-k\scaleint{5ex}\frac{\rho(\vec{r'})}{|\vec{r}-\vec{r}'|}\dd[3]{\vec{r}}$
+
+
+
+\subsubsection*{Electromagnetic force}
+$\vec{F}(t,\vec{r},\dotv{r})=q(\vec{E}(t,\vec{r})+\dotv{r}\times\vec{B}(t,\vec{r})),\ T+q\Phi(\vec{r})\equiv$``electromechanical energy''.
+
+
+
+
+\subsection{Motion of a particle in a one-dimensional potential}
+Law of conservation of energy: $\frac{1}{2}m\dot{x}^{2}+V(x)=E\then \dot{x}(m\ddot{x}-F(x))=0$\\
+$\ $\hfill(if $\dot{x}\neq0\then m\ddot{x}-F(x)=0$).\\
+Said ODE is an \textbf{autonomous system} (i.e. it's of the form $\ddot{x}=f(x,\dot{x})$), and it's thus invariant under transformations $t\to t+c$ and $t\to -t$.
+
+\subsubsection*{Equilibrium, and trajectory}
+\textbf{Equilibria} are the points $x_{0}\in\R$ s.t. $x(t)=x_{0}$ is a solution of the EOM $\then \ddot{x}(t)=0\then F(x(t))=F(x_{0})=-V(x_{0})=0$.\\
+The \textbf{accessible region} for a given $E$ is the set $\{x\in\R\ |\ V(x)\leq E\}$, which, in general, are disjoint union of closed intervals.\\
+The endpoints of the intervals, if not equilibriums, are the \textbf{turning points} of the trajectories: $x_{i} \ \text{turning point} \iff V(x_{i})=E,\ V'(x_{i})\neq0$.
+\smallskip
+
+
+In general, the relation between time and displacement is given as: \\
+\centerline{$t-t_{0}=\pm\sqrt{\frac{m}{2}}\scaleint{5ex}\frac{\dd{x}}{\sqrt{E-V(x)}}\then t=\sqrt{\frac{m}{2}}\scaleint{5ex}
+_{x_{0}}^{x}\frac{\dd{s}}{\sqrt{E-V(s)}}\equiv \theta(x)$}
+
+\textbf{Interval with two turning points}:\\
+The time for the particle to go from $x_{0}$ to $x_{1}$ is $\frac{\tau}{2}$, being:\\
+\centerline{$\tau=2\theta(x_{1})=\sqrt{2m}\scaleint{5ex}_{x_{0}}^{x_{1}}\frac{\dd{s}}{\sqrt{E-V(s)}}$.}
+
+The function $\theta(x)$ is mon. increasing for $x\in(x_{0},x_{1})$, therefore $\theta$ is invertible and we can write $x$ in terms of t:
+\\[2pt]
+\centerline{$x(t)=\theta^{-1}(t), 0\leq t\leq \frac{\tau}{2},\ \ \ \ \ \ \ \ 
+x(t)=\theta^{-1}(\tau-t), \frac{\tau}{2}\leq t\leq \tau$.}
+\smallskip
+
+\textbf{Semi-infinite interval with turning point at one side $[x_{0},\infty)$}:\\
+For a particle with initial positon $x(0)=x_{0}$ and moving towards infinity, the time is:\\
+\centerline{$t_{\infty}=\theta(\infty)=\sqrt{\frac{m}{2}}\scaleint{5ex}_{x_{0}}^{\infty}\frac{\dd{s}}{\sqrt{E-V(s)}}$, it can be convergent or divergent.}
+$x$ can be expressed as:\\
+\centerline{$x(t)=\theta^{-1}(t), 0\leq t\leq t_{\infty},\ \ \ \ \ \ \ \ 
+x(t)=\theta^{-1}(-t), -t_{\infty}\leq t\leq 0$.}
+\smallskip
+
+
+\textbf{Accessible region is $\R$}:\\
+The time for the particle to reach infinity from an initial positon $x_{0}$ is:\\
+\centerline{$t_{\pm \infty}=\theta(\pm\infty)=\sqrt{\frac{m}{2}}\scaleint{5ex}_{x_{0}}^{\pm\infty}\frac{\dd{s}}{\sqrt{E-V(s)}}$}
+\centerline{$x(t)=\theta^{-1}(t), t_{-\infty}\leq t\leq t_{\infty},\ \ \ \ \ \ \ \ 
+x(t)=\theta^{-1}(-t), -t_{\infty}\leq t\leq t_{-\infty}$.}
+
+\smallskip
+
+\subsubsection*{Stability of equilibria, oscillation approximation}
+An equilibrium is stable $\iff$ it is a \emph{relative minimum} of the potential.\\
+For an open ball centered at a stable eq. $(x_{\text{eq}}-\varepsilon,x_{\text{eq}}+\varepsilon)$, the Taylor expansion  
+of $V$ is of the form:\\
+\centerline{$V(x)=V(x_{\text{eq}})+\frac{1}{2}V''(x_{\text{eq}})(x-x_{\text{eq}})^{2}+O(x^{3})$}
+Then the motion of a particle within said open ball can be approximated to:
+\centerline{$\ddot{x}=\frac{F(x)}{m}=-\frac{V'(x)}{m}\simeq -\frac{V''(x_{\text{eq}})}{m}(x-x_{\text{eq}})\ \ \ \ \then \ \ \ \ \ddot{\xi}+\omega^{2}\xi=0$}
+with $\xi\equiv x-x_{\text{eq}},\ \omega\equiv\sqrt{\frac{V''(x_{\text{eq}})}{m}}$.\\
+The solution of this ODE is: $\xi=A\cos{(\omega t+\alpha)},\ A\in(0,|x-x_{\text{eq}}|)$, and the period of the oscillation is $\tau\simeq \frac{2\pi}{\omega}=2\pi\sqrt{\frac{m}{V''(x_{\text{eq}})}}$.
+
+
+
+\subsection{Dynamics of a system of particles}
+The law of motion of $N$ elements with masses $m_{i}$, positions $\vec{r}_{i}$ is:\\
+\centerline{$m_{i}\ddot{\vec{r}}_{i}=\sum\limits_{j=1}^{N}\vec{F}_{ij}+\vec{F}_{i}\ext,\ \ \ \ i=1,...,N,$}
+where $\vec{F}_{ij}$ are the forces exerted by $j$ on $i$, and $\vec{F}\i\ext$ are the total external force exerted on $i$.
+The solution of this set of $N$ equations is unique if given the initial conditions\\
+\centerline{$\vec{r}_{i}(t_{0})=\vec{r}_{i_{0}},\ \ \ \ \dotv{r}_{i}(t_{0})=\vec{v}_{i_{0}},\ \ \ \ i\in\{1,...,N\}$.}
+\subsubsection*{Center of mass}
+\centerline{$\vec{F}\ext=\sum\limits_{i=1}^{N}\vec{F}\i\ext,\ \ \ \ \sum\limits_{i=1}^{N}m\i\ddot{\vec{r}}\i=\vec{F}\ext,\ \ \ \ \vec{R}\equiv M^{-1}\sum\limits_{i=1}^{N}m\i\vec{r}\i,\ \ \ \ M\ddot{\vec{R}}=\vec{F}\ext.$}
+
+
+
+\subsubsection*{Conservation}
+\emph{Linear momentum:}\\
+$\vec{P}\equiv \sum\limits_{i=1}^{N}m\i\dotv{r}\i=M\dot{\vec{R}}\then \dot{\vec{P}}=\vec{F}\ext\ \ \ \ \then $\hfill $\vec{P}\text{ conserved }\iff \vec{F}\ext=0$.\\
+\emph{Angular momentum:}\\
+$\vec{L}=M\vec{R}\times\dot{\vec{R}}+\sum\limits_{i=1}^{N}m\i\vec{r}'\i\times\dot{\vec{r}}\i'\equiv\vec{L}_{\text{CM}}+\sum\limits_{i=1}^{N}m\i\vec{r}'\i\times\dot{\vec{r}}\i',\hfill \vec{r}\i=\vec{R}+\vec{r}\i'$,\\
+$ \dot{\vec{L}}=\sum\limits_{i=1}^{N}\vec{r}\i\times\vec{F}\i\ext\equiv\vec{N}\ext\ \ \ \ \then \hfill \vec{L}\text{ conserved }\iff \vec{N}\ext=0$\\
+\emph{Kinetic energy, potential, and total mechanical energy:}\\
+$T=\frac{1}{2}\sum\limits_{i=1}^{N}m\i\dotv{r}\i^{2}=\frac{1}{2}M\dotv{R}^{2}+\frac{1}{2}\sum\limits_{i=1}^{N}m\i(\vec{r}'\i)^{2}$. If the forces acting on the system is \emph{conservative}, in other words, if $\vec{F}\i\equiv\vec{F}\i\ext+\sum\limits_{j=1}^{N}\vec{F}_{ij}=-\partials{V}{\vec{r}\i},\ \ \ \ i=1,...,N$; then the total mechanical energy $E=T+V(\vec{r}_{1},...,\vec{r}_{N})$ of the system is conserved.\\
+The potential of the system has the form: $V=\sum\limits_{i=1}^{N}V\i(\vec{r}\i)+\sum\limits_{1\leq i<j\leq N}V\ij(\vec{r}\i,\vec{r}\j)$.\\
+Defining $V\ij(\vec{r}_{i},\vec{r}_{j})=U\ij(\vec{r}\i-\vec{r}\j)\then\hfill V=\sum\limits_{i=1}^{N}V\i(\vec{r}\i)+\sum\limits_{1\leq i<j\leq N}U\ij(\vec{r}\i-\vec{r}\j)$.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

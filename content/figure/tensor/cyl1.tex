@@ -1,0 +1,10 @@
+\tdplotsetmaincoords{60}{110}
+\begin{tikzpicture}[scale=0.3,tdplot_main_coords,baseline=0]
+     \node [cylinder, draw, shape aspect=3,
+       minimum height=1cm, shape border rotate=90, minimum width=1cm] (c) {};
+\draw[->] (O) -- (1.75,0,0) node[anchor=north east]{$x$};
+\draw[->] (O) -- (0,1.5,0) node[anchor=north east]{$y$};
+\draw[->] (O) -- (0,0,1.5) node[anchor=north east]{$\omegab$};
+%     \draw[red, <->] (c.top)   -- (c.bottom)       node [at end, below, black]   {height};
+%     \draw[red, <->] (c.north) -- (c.south)        node [at start, above, black] {width};
+\end{tikzpicture}

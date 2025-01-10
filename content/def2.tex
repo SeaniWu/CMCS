@@ -1,0 +1,51 @@
+\definecolor{myblue}{cmyk}{1,.72,0,.38}
+
+\def\firstcircle{(0,0) circle (1.5cm)}
+\def\secondcircle{(0:2cm) circle (1.5cm)}
+
+\colorlet{circle edge}{myblue}
+\colorlet{circle area}{myblue!5}
+
+\tikzset{filled/.style={fill=circle area, draw=circle edge, thick},
+    outline/.style={draw=circle edge, thick}}
+    
+\pgfdeclarelayer{background}
+\pgfsetlayers{background,main}
+
+\everymath\expandafter{\the\everymath \color{myblue}}
+\everydisplay\expandafter{\the\everydisplay \color{myblue}}
+
+\renewcommand{\baselinestretch}{.8}
+\pagestyle{empty}
+
+\global\mdfdefinestyle{header}{%
+linecolor=gray,linewidth=1pt,%
+leftmargin=0mm,rightmargin=0mm,skipbelow=0mm,skipabove=0mm,
+}
+
+\renewcommand{\dot}[1]{
+  \accentset{\mbox{\bfseries .}}{#1}}
+
+\newcommand{\header}{
+\begin{mdframed}[style=header]
+\footnotesize
+\sffamily
+Classical~Mechanics~Cheat~Sheet\\
+Xiaoye~Wu,~Page~\thepage~of~2\\
+\textit{\email{xiaoyewu@ucm.es}}
+\end{mdframed}
+}
+
+\makeatletter % Author: https://tex.stackexchange.com/questions/218587/how-to-set-one-header-for-each-page-using-multicols
+\renewcommand{\section}{\@startsection{section}{1}{0mm}%
+                                {.2ex}%
+                                {.2ex}%x
+                                {\color{myblue}\sffamily\small\bfseries}}
+\renewcommand{\subsection}{\@startsection{subsection}{1}{0mm}%
+                                {.2ex}%
+                                {.2ex}%x
+                                {\sffamily\bfseries}}
+\makeatother
+\setlength{\parindent}{0pt}
+
+\def\scaleint#1{\vcenter{\hbox{\scaleto[3ex]{\displaystyle\int}{#1}}}}

@@ -1,0 +1,122 @@
+\section{Miscellaneous}
+
+
+
+\subsection{Vectorial calculus}
+\subsubsection*{Cross/dot product}
+$\vec{a}\times(\vec{b}\times\vec{c})=(\vec{a}\cdot\vec{c})\vec{b}-(\vec{a}\cdot\vec{b})\vec{c},\ \ \ \ (\vec{a}\times\vec{b})^{2}=\vec{a}^{2}\vec{b}^{2}-(\vec{a}\cdot\vec{b})^{2}$
+
+
+
+
+\subsection{Chain rule (Partial derivatives)}
+Given a function $f\equiv f(t,x_{1},...,x_{n}),\ x_{i}\equiv x_{i}(t),\forall i$, then:\\
+$\dv{f}{t}=\partials{f}{t}+\sum\limits_{i}\partials{f}{x_{i}}\dv{x_{i}}{t}\equiv \partials{f}{t}+\sum\limits_{i}\partials{f}{x_{i}}\dot{x_{i}}$.
+
+
+
+\subsection{Reduction of two body problem into one under central field}
+\begin{compactenum}
+\item $m_{1}\ddot{\vec{r}}_{1}=\vec{F}_{12}(t,\vec{r}_{1},\vec{r}_{2},\dotv{r}_{1},\dotv{r}_{2}),$  $m_{1}\ddot{\vec{r}}_{1}=\vec{F}_{21}=-\vec{F}_{12}$
+\item $\vec{R}=\frac{1}{M}(m_{1}\vec{r}_{1}+m_{2}\vec{r}_{2})$ $\vec{r}=\vec{r}_{1}-\vec{r}_{2}\then \mu\ddot{\vec{r}}=\vec{F}_{12}=\vec{F}(t,\vec{r},\dotv{r})$
+\item $\mu=\frac{m_{1}m_{2}}{m_{1}+m_{2}}$
+\item $\vec{r}_{1}=\vec{R}+\frac{m_{2}}{M}\vec{r},\ \vec{r}_{2}=\vec{R}-\frac{m_{1}}{M}\vec{r}$. Since $\ddot{\vec{R}}=0$ we can place the origin at $\vec{R}(t)=0$ and the ref. frame will still be inertial.
+\item $\then \vec{r}_{1}=\frac{m_{2}}{M}\vec{r},\ \vec{r}_{2}=-\frac{m_{1}}{M}\vec{r}$
+\item When $m_{2}$ is much larger than $m_{1}\then\mdoubleline{\frac{m_{1}}{M}\simeq=0\then \vec{r}_{2}\simeq0}{\frac{m_{2}}{M}\simeq=1\then \vec{r}_{1}\simeq\vec{r}}$
+\end{compactenum}
+
+
+
+\subsection{Integrals}
+\begin{compactitem}
+\item $x=\sqrt\frac{1}{k}\cosh{z}\then \scaleint{5ex}\frac{dx}{\sqrt{kx^{2}-1}}=\scaleint{5ex}\sqrt{\frac{1}{k}}dz=\sqrt{\frac{1}{k}}\cdot z$
+\end{compactitem}
+
+
+
+
+\subsection{ODEs}
+\begin{compactitem}
+	\item $u''+Cu=0,\ \ \ \ C\in\R$\\
+	If $C<0\then u=a e^{\gamma\theta}+b e^{-\gamma\theta},\ \ \ \ \gamma\equiv\sqrt{|C|}>0\then r=u^{-1}$\\
+	$\then r=A\sech{(\gamma(\theta-\theta_{0}))}\ \ \ \ (a,b>0)$\\
+	$\then r=Ae^{\pm\gamma(\theta-\theta_{0})}\ \ \ \ (a=0 \text{ or }b=0)$\\
+	$\then r=A\csch{(\gamma(\theta-\theta_{0}))}\ \ \ \ (ab<0)$\\
+	If $C=0\then u=a+b\theta\iff r=\frac{1}{a+b\theta}$\\
+	If $C>0\then u=\frac{1}{A}\cos{(\gamma(\theta-\theta_{0}))}\iff r=A\sec{(\gamma(\theta-\theta_{0}))}$
+\end{compactitem}
+
+
+
+
+
+\subsection{Trigonometric functions}
+$\sin{(\alpha +\beta)}=\sin\alpha\cos\beta+\cos{\alpha}\sin\beta,\ \cos{(\alpha+\beta)}=\cos\alpha\cos\beta-\sin\alpha\sin\beta$\\
+$\sin(\alpha-\beta)=\sin\alpha\cos\beta-\cos{\alpha}\sin\beta,\ \cos{(\alpha-\beta)}=\cos\alpha\cos\beta+\sin\alpha\sin\beta$\\
+$\cos(2x)=\cos^2x-\sin^2x=2\cos^2x-1=1-2\sin^2x$\\
+$\sin(2x)=2\sin x\cos x,\ \tan(2x)=\frac{2\tan x}{1-\tan^2x}$\\
+$\sin^2x-1=-\cos(2x),\ \cos^2x-1=-\sin^2x$\\
+$\sin(\frac{x}{2})=\sqrt{\frac{1-\cos x}{2}},\ \cos{\frac{x}{2}}=\sqrt{\frac{1+\cos x}{2}},\ \tan{\frac{x}{2}}=\sqrt{\frac{1-\cos x}{1+\cos{x}}}$\\
+$\scaleint{5ex}\sin^{2}{(x)}\dd{x}=\frac{x}{2}-\frac{\sin{(2x)}}{4}+C,\ \scaleint{5ex}\cos^{2}{(x)}\dd{x}=\frac{x}{2}+\frac{\sin{(2x)}}{4}+C$\\
+$\scaleint{5ex}\sin^{3}{(x)}\dd{x}=\frac{\cos^{3}{x}}{3}-\cos{x}+C,\ \scaleint{5ex}\cos^{3}{(x)}\dd{x}=\sin{x}-\frac{\sin^{3}{x}}{3}+C$
+
+
+
+\subsection{Hyperbolic functions}
+$\sinh{x}=\frac{e^{x}-e^{-x}}{2},\ \cosh{x}=\frac{e^{x}+e^{-x}}{2}$\\
+$\cosh^{2}{x}-\sinh^{2}{x}=1$\\
+$\sinh{x+y}=\sinh{x}\cosh{y}+\cosh{x}\sinh{y},$\\
+$\cosh{x+y}=\cosh{x}\cosh{y}+\sinh{x}\sinh{y}$
+ \\ $\sinh{x-y}=\sinh{x}\cosh{y}-\cosh{x}\sinh{y},$\\
+ $\cosh{x-y}=\cosh{x}\cosh{y}-\sinh{x}\sinh{y}$
+ \\ $\sinh{2x}=2\sinh{x}\cosh{x},\ \cosh{(2x)}=\cosh^2{x}+\sinh^2{x}$\\
+ $\cosh^2{x}=\frac{1+\cosh{2x}}{2},\ \sinh^2{x}=\frac{\cosh{2x}-1}{2}$
+ \\ $\cosh{\frac{x}{2}}=\sqrt{\frac{1+\cosh{x}}{2}},\ \sinh{\frac{x}{2}}=\pm\sqrt{\frac{\cosh{x}-1}{2}}$
+ \\ $\frac{d}{dx}\sinh x=\cosh x,\ \frac{d}{dx}\cosh x=\sinh x,\ \frac{d}{dx}\tanh x=\text{sech}^2{x}$\\
+$ \tanh{(\phi_{1}+\phi_{2})}=\frac{\tanh{\phi_{1}}+\tanh{\phi_{2}}}{1+\tanh{\phi_{1}}\tanh{\phi_{2}}}$\\
+$\frac{1}{\sqrt{1-\tanh^{2}{\phi}}}=\cosh{\phi}$
+
+
+
+\subsection{Constants and units}
+Earth radius $\equiv6.3674\cdot 10^{6}\text{m}$\\
+Centrifugal acceleration on Earth$\equiv 5.93031\cdot 10^{-3}\text{m s}^{-2}$\\
+$h=2\pi\amshbar\equiv\text{Planck's constant}\equiv 6.62607015\times 10^{-34}\text{J}\cdot \text{s}$
+
+
+
+
+\subsection{Dynamic equations}
+Hooke's Law: $\vec{F}_{s}=-k(l_{0}-x)\vec{e}_{x},\ V_{s}=-k/2(x-l_{0})^{2}$\\
+Electromagnetic (Static fields) force: $\vec{F}=q(\vec{E}+\vec{v}\times\vec{B})$
+
+
+
+
+\subsection{Vectorial operators}
+\subsubsection*{Gradients \& divergence}
+Cylindrical:\\
+\centerline{$\nabla U=\partials{U}{\rho}\vec{u}_\rho+\frac{1}{\rho}\partials{U}{\varphi}\vec{u}_\varphi+\partials{U}{z}\vec{k}$}
+\centerline{$\nabla\cdot\vec{F}=\frac{1}{\rho}\partials{}{\rho}(\rho F_\rho)+\frac{1}{\rho}\partials{F_\varphi}{\varphi}+\partials{F_z}{z}$}
+\centerline{$\Bigg(\frac{1}{\rho}\partials{F_z}{\varphi}-\partials{F_\varphi}{z}\Bigg)\vec{u}_\rho+
+                    \Bigg(\partials{F_\rho}{z}-\partials{F_z}{\rho}\Bigg)\vec{u}_\varphi+
+                    \Bigg(\frac{1}{\rho}\partials{}{\rho}(\rho F_\varphi)-\partials{F_\rho}{\varphi}\Bigg)\vec{k}$}
+Spherical:\\
+\centerline{$\nabla U=\partials{U}{r}\vec{u}_r+\frac{1}{r}\partials{U}{\theta}\vec{u}_\theta+\frac{1}{r\sin{\theta}}\partials{U}{\varphi}\vec{u}_\varphi$}
+\centerline{$\nabla\cdot \vec{F}=\frac{1}{r^2}\partials{}{r}(r^2 F_r)+\frac{1}{r\sin{\theta}}\partials{}{\theta}(\sin{\theta}F_\theta)+\frac{1}{r\sin{\theta}}\partials{F_\varphi}{\varphi}$}
+\centerline{$\Bigg[\frac{1}{r\sin{\theta}}\Bigg(\partials{}{\theta}(\sin{\theta}F_\varphi)-\partials{F_\theta}{\varphi}\Bigg)\Bigg]\vec{u}_r+
+                    \Bigg[\frac{1}{r}\Bigg(\frac{1}{\sin{\theta}}\partials{F_r}{\varphi}-\partials{}{r}(r F_\varphi)\Bigg)\Bigg]\vec{u}_\theta+
+                    $}
+\centerline{$+\Bigg[\frac{1}{r}\Bigg(\partials{}{r}(r F_\theta)-\partials{F_r}{\theta}\Bigg)\Bigg]\vec{u}_\varphi$}
+
+
+
+
+
+
+
+
+
+
+
+

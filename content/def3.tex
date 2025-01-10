@@ -1,0 +1,106 @@
+\newcommand{\partials}[2]{\pdv{#1}{#2}}
+
+\makeatletter 
+\renewcommand{\section}{\@startsection{section}{1}{0mm}%
+                                {.2ex}%
+                                {.2ex}%xion
+                                {\color{myblue}\sffamily\small\bfseries}}
+\renewcommand{\subsection}{\@startsection{subsection}{1}{0mm}%
+                                {.2ex}%
+                                {.2ex}%x
+                                {\sffamily\fontsize{6}{5}\selectfont\bfseries}}
+\renewcommand{\subsubsection}{\@startsection{subsubsection}{1}{0mm}%
+                                {.2ex}%
+                                {.2ex}%x
+                                {\color{myblue}\sffamily\tiny\bfseries}}
+\newcommand{\subcolorsection}[1]{%
+    \colorbox{green!10}{\parbox[t][0em]{\dimexpr\columnwidth-2\fboxsep}{\thesubsection\ #1}}}
+\makeatother
+\setlength{\parindent}{0pt}
+
+\newcommand{\dotv}[1]{\dot{\vec{#1}}}
+\newcommand{\then}{\Rightarrow}
+\newcommand{\R}{\mathbb{R}}
+\newcommand{\Q}{\mathbb{Q}}
+\newcommand{\C}{\mathbb{C}}
+\newcommand{\ext}{^{\text{(e)}}}
+\renewcommand{\i}{_{i}}
+\renewcommand{\ij}{_{ij}}
+\renewcommand{\j}{_{j}}
+\renewcommand{\vec}[1]{\mathbf{#1}}
+
+
+\newcommand{\ELt}[2]{\frac{\text{d}}{\text{d}t}\frac{\partial #1}{\partial \dot{#2}}-\frac{\partial #1}{\partial #2}}
+
+\newcommand{\tqp}[0]{(t,\vec{q},\vec{p})}
+
+\newcommand{\bfemph}[1]{\textbf{\emph{#1}}}
+
+\newcommand{\mdoubleline}[2]{\left\{
+\begin{aligned}
+#1 \\
+#2
+\end{aligned}
+\right.}
+
+\newcommand{\diff}[1]{\qty(\dv{#1}{t})_{\text{f}}}
+\newcommand{\difm}[1]{\qty(\dv{#1}{t})_{\text{m}}}
+
+\makeatletter
+\newcommand*{\transpose}{%
+  {\mathpalette\@transpose{}}%
+}
+\newcommand*{\@transpose}[2]{%
+  % #1: math style
+  % #2: unused
+  \raisebox{\depth}{$\m@th#1\intercal$}%
+}
+\makeatother
+
+\newcommand{\vect}[1]{\boldsymbol{\mathbf{#1}}}
+\newcommand{\omegab}[0]{\color{myblue}{\vect{\upomega}}}
+
+\newcommand{\smol}[1]{{\fontsize{4}{5}\selectfont #1 }}
+\newcommand{\ssmol}[1]{{\fontsize{3}{4}\selectfont #1 }}
+
+
+\newcommand{\mdoublelineone}[1]{\left\{
+                \begin{array}{ll}
+                  #1\\
+                \end{array}
+              \right.
+              }
+
+\renewcommand{\hbar}{\mathchar'26\mkern-9mu h}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

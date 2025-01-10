@@ -1,0 +1,32 @@
+\pgfmathsetmacro{\xrot}{70} 
+\pgfmathsetmacro{\zrot}{100}
+\tdplotsetmaincoords{\xrot}{\zrot}
+\pgfmathsetmacro{\rvec}{.8} 
+\pgfmathsetmacro{\thetavec}{30} 
+\pgfmathsetmacro{\phivec}{60}
+\pgfmathsetmacro{\cosphi}{cos(\phivec)}
+\pgfmathsetmacro{\sinphi}{sin(\phivec)}
+\begin{tikzpicture}[scale=0.3,tdplot_main_coords,baseline=0]
+\coordinate (O) at (0,0,0);
+\def\l{0.8}
+\def\d{1.3}
+
+\draw[dashed] (0,0,0) -- (\rvec,0,0) node[anchor=north east]{}; 
+\draw[->] (\rvec,0,0) -- (\d,0,0) node[below]{$x$};
+\draw[dashed] (0,0,0) -- (0,\rvec,0) node[anchor= west]{};
+\draw[->] (0,\rvec,0) -- (0,\d,0) node[anchor= west]{$y$};
+\draw[dashed] (0,0,0) -- (0,0,\rvec) node[anchor=south]{};
+\draw[->] (0,0,\rvec) -- (0,0,\d) node[anchor=south]{$\omegab$};
+
+\tdplotdrawarc[]{(O)}{\rvec}{\zrot-180}{\zrot}{anchor=north}{}
+\tdplotdrawarc[dashed]{(O)}{\rvec}{\zrot}{\zrot+180}{anchor=north}{}
+
+\tdplotsetcoord{P}{\rvec}{\thetavec}{\phivec} 
+\draw[color=myblue,-latex] (O) -- (P)  node[midway, anchor=north]{$\ \ r$}; 
+\tdplotsetthetaplanecoords{\phivec}
+\draw[dashed] (0,0,0) -- (\rvec*\cosphi,\rvec*\sinphi,0);
+\draw[tdplot_rotated_coords] (\rvec,0,0) arc (0:90:\rvec); 
+\tdplotsetrotatedcoords{\phivec}{\thetavec}{0}
+\tdplotsetrotatedcoordsorigin{(P)}
+\draw[tdplot_screen_coords] (O) circle (\rvec);
+\end{tikzpicture}

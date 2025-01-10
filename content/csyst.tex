@@ -1,0 +1,90 @@
+\section{Coordinate systems}
+
+
+
+\subsection{Cylindrical}
+
+
+
+\subsubsection*{Basis vectors}
+\input{content/figure/cyl}
+ $\vec{e}_\rho=\Big|\frac{\partial \vec{r}}{\partial \rho}\Big|^{-1}\frac{\partial \vec{r}}{\partial \rho}=(\cos\varphi,\sin\varphi,0), $\\$
+                    \vec{e}_\varphi =\Big|\frac{\partial \vec{r}}{\partial \varphi}\Big|^{-1}\frac{\partial \vec{r}}{\partial \varphi}=(-\sin\varphi,-cos\varphi,0), $\\$
+                    \vec{e}_z =\Big|\frac{\partial \vec{r}}{\partial
+                    z}\Big|^{-1}\frac{\partial \vec{r}}{\partial z}=(0,0,1). $
+                    
+                    
+                    
+\subsubsection*{Velocity vectors}
+                    $\dot{\vec{e}}_\rho =\dot{\varphi}\vec{e}_\varphi,\ \ \ \ \dot{\vec{e}}_\varphi=-\dot{\varphi}\vec{e}_\rho,\ \ \ \ \dot{\vec{e}}_z=0. $\\$
+                    v_\rho =\dot{\rho},\ \ \ \ v_\varphi=\rho\dot{\varphi},\ \ \ \ v_z=\dot{z}. $\\
+                    
+                    
+                    
+\subsubsection*{Acceleration vectors}
+                    $a_\rho =\ddot{\rho}-\rho\dot{\varphi}^2,\ \ \ \ a_\varphi=\rho\ddot{\varphi}+2\dot{\rho}\dot{\varphi},\ \ \ \ a_z=\ddot{z}$.\\
+                        \begin{wrapfigure}[0]{r}[0pt]{0cm}
+\input{content/figure/sph}
+    \end{wrapfigure}
+
+
+
+\subsection{Spherical}
+
+
+
+\subsubsection*{Basis vectors}
+$\vec{e}_r=\Big|\frac{\partial \vec{r}}{\partial r}\Big|^{-1}\frac{\partial \vec{r}}{\partial r}$\\
+$=(\sin\theta\cos\varphi,\sin\theta\sin\varphi,\cos\theta)=\frac{\vec{r}}{r},$\\
+$\vec{e}_\theta=\Big|\frac{\partial \vec{r}}{\partial \theta}\Big|^{-1}\frac{\partial \vec{r}}{\partial \theta}$\\
+$=(\cos\theta\cos\varphi,\cos\theta\sin\varphi,-\sin\theta),$\\
+$\vec{e}_\varphi=\Big|\frac{\partial \vec{r}}{\partial \varphi}\Big|^{-1}\frac{\partial \vec{r}}{\partial \varphi}=(\sin\varphi,\cos\varphi,0).$
+
+
+
+\subsubsection*{Velocity vectors}
+$\dot{\vec{e}}_r=\partials{\vec{e}_r}{\theta}\dot{\theta}+\partials{\vec{e}_r}{\varphi}\dot{\varphi}=\dot{\theta}\vec{e}_\theta+\sin\theta \dot{\varphi}\vec{e}_\varphi,$\\
+$\dot{\vec{e}}_\theta  =\partials{\vec{e}_\theta}{\theta}\dot{\theta}+\partials{\vec{e}_\theta}{\varphi}\dot{\varphi}=-\dot{\theta}\vec{e}_r+\cos\theta \dot{\varphi}\vec{e}_\varphi,$\\
+$\dot{\vec{e}}_\varphi=\partials{\vec{e}_\varphi}{\varphi}\dot{\varphi}=-(\cos\varphi,\sin\varphi,0)\dot{\varphi}$
+$=-\dot{\varphi}(\sin\theta\vec{e}_r+\cos\theta\vec{e}_\theta).$\\
+$v_r=\dot{r},\ \ \ \ v_\theta=r\dot{\theta},\ \ \ \ v_\varphi=r\sin\theta\dot{\varphi}.$
+
+
+
+\subsubsection*{Acceleration vectors}
+$a_r=\ddot{r}-r\dot{\theta}^2-r\sin^2\theta\dot{\varphi}^2,\ \ \ \ a_\theta=r\ddot{\theta}+2\dot{r}\dot{\theta}-r\sin\theta\cos\theta\dot{\varphi}^2,$\\
+$a_\varphi=r\sin\theta\ddot{\varphi}+2\sin\theta\dot{r}\dot{\varphi}+2r\cos{\theta}\dot{\theta}\dot{\varphi}.$
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

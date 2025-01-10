@@ -1,0 +1,118 @@
+\section{Non-inertial frame}
+
+
+
+\subsection{Basic definitions}
+
+
+
+\subsubsection*{Reference frames}
+$\pazocal{S}'\equiv$ inertial reference frame, $\pazocal{S}\equiv$ non inertial reference frame.\\
+$\diff{}{t}\equiv$ time derivative w.r.t $\pazocal{S}'$, $\diff{}{t}\equiv$ time derivative w.r.t $\pazocal{S}$,\\
+the vectors between the frames are related by $\vec{e}'_{i}(t)=O(t)\vec{e}_{i}$, being $O(t)$ the orthogonal linear application.
+
+
+
+\subsubsection*{Rotation matrices and relations between ref. frames}
+$\text{SO}(3)=\{M\in\R^{3\times3}|MM^{\transpose}=M^{\transpose}M=\mathbbold{1},\ \det{M}=1\}$\\
+$\forall M\in \text{SO}(3),\ \exists \vec{n}\in \R^{3} \text{ and reference frame } \pazocal{S}'=\{\vec{e}_{1},\vec{e}_{2},\vec{n}\}$\\
+ s.t. $\text{mat}_{\pazocal{S}'}^{\pazocal{S}'}(M)\equiv R_{3}(\theta)=
+\begin{bmatrix}
+\cos{\theta} & -\sin{\theta} & 0\\
+\sin{\theta} & \cos{\theta} & 0\\
+0 & 0 & 1\\
+\end{bmatrix}$.\\
+$\dv{\theta}(R_{\vec{n}}(\theta))=\dv{\varepsilon}\Big|_{\varepsilon=0}R_{\vec{n}}(\theta+\varepsilon)=\dv{\varepsilon}\Big|_{\varepsilon=0}R_{\vec{n}}(\varepsilon)R_{\vec{n}}(\theta)$\\$=\Omega R_{\vec{n}}(\theta)=\vec{n}\times R_{\vec{n}}(\theta)$\\
+$O(t)\in \text{SO}(3),\ \forall t$, and $\dot{O}(t)=\Omega(t)O(t),$\\
+ where $\Omega(t)=
+\begin{bmatrix}
+0 & -\omega_{3}(t) & \omega_{2}(t)\\
+\omega_{3}(t) & 0 & -\omega_{1}(t)\\
+-\omega_{2}(t) & \omega_{1}(t) & 0\\
+\end{bmatrix}$ antisymmetric matrix.\\
+$\dot{O}(t)\vec{c}=\vect{\upomega}(t)\times O(t)\vec{c},\ \vect{\upomega}=(\omega_{1},\omega_{2},\omega_{3})$.\hfill $ \forall t\in\R\text{ and }\forall\vec{c}\in\R^{3}$\\
+``$\vect{\upomega}(t)\times$''$=\Omega(t)=\dot{O}(t)O(t)^{\transpose}=\dot{O}(t)O(t)^{-1}\iff $\\
+$\vect{\upomega}(t_{0})\times=\frac{d}{dt}\Big|_{t=t_{0}}O(t)O^{-1}(t_{0})$.\\
+$\dotv{e}_{i}(t)=\vect{\upomega}(t)\times O(t)\vec{e}'_{i}=\vect{\upomega}(t)\times\vec{e}_{i}(t)$.\\
+$\vect{\upomega}(t)=\dot{\theta}(t)\vec{n}(t)$, in words: the direction of the vector $\vect{\upomega}(t)$ is equal to the axis of rotation $\vec{n}(t)$, and the magnitude of $\vect{\upomega}(t)$ is equal to the angular velocity of the moving axes w.r.t the fixed ones.
+
+
+
+\subsection{Time derivative in different reference frames}
+$\diff{\vec{A}(t)}=\difm{\vec{A}({t})}+\omegab(t)\times\vec{A}(t)$,\\
+in particular $\diff{\omegab(t)}=\difm{\omegab(t)}=\dot{\omegab}(t)$\\
+If the origin of $\pazocal{S}$ is displacing from that of $\pazocal{S}'$ with $\vec{R}(t)$, then:\\
+$\diff{\vec{A}(t)}=\difm{\vec{A}({t})}+\omegab(t)\times\vec{A}(t)+\vec{V}(t)$,
+
+
+
+\subsection{Dynamics in non-inertial ref. frame}
+\subsubsection*{Preamble}
+In the general case, the origin of $\pazocal{S}$ is displaced from that of $\pazocal{S}'$ by a time-dependent vector $\vec{R}(t)$.
+If $\vec{r}$ is the position of a particle w.r.t $\pazocal{S}$, then the position w.r.t $\pazocal{S}'$ is given by $\vec{r}'=\vec{r}+\vec{R}$. We'll define the following vectors:\\
+$\vec{V}\equiv\diff{\vec{R}},\ \vec{A}\equiv\diff{\vec{V}}=\Big(\frac{\text{d}^{2}\vec{R}}{\text{d}t^{2}}\Big)_{\text{f}},\ \vec{v}_{\text{f}}=\diff{\vec{r}'},\ \vec{v}_{\text{m}}=\difm{\vec{r}}$
+\\
+$\vec{a}_{\text{f}}\equiv\diff{\vec{v}_{\text{f}}}=\Big(\frac{\text{d}^{2}\vec{r}'}{\text{d}t^{2}}\Big)_{\text{f}},\ \vec{a}_{\text{m}}\equiv\difm{\vec{v}_{\text{m}}}=\Big(\frac{\text{d}^{2}\vec{r}}{\text{d}t^{2}}\Big)_{\text{m}}.$
+\subsubsection*{Equations of motion}
+$\vec{v}_{\text{f}}=\vec{v}_{\text{m}}+\omegab\times\vec{r}+\vec{V}$,\\
+$\vec{a}_{\text{f}}=\vec{a}_{\text{m}}+\vec{A}+2\omegab\times\vec{v}_{\text{m}}+\omegab\times(\omegab\times\vec{r})+\dot{\omegab}\times\vec{r}$,\\
+$m\vec{a}_{\text{m}}=\vec{F}-m\vec{A}-2m\omegab\times\vec{v}_{\text{m}}-m\omegab\times(\omegab\times\vec{r})-m\dot{\omegab}\times\vec{r}\equiv\vec{F}+\vec{F}_{\text{i}}$,\\
+where $\vec{F}_{\text{i}}$ is the fictitious force:\\
+$\vec{F}_{\text{i}}=-m\vec{A}-2m\omegab\times\vec{v}_{\text{m}}-m\omegab\times(\omegab\times\vec{r})-m\dot{\omegab}\times\vec{r}$\\
+Centrifugal force $\equiv-m\omegab\times(\omegab\times\vec{r})$,\\
+Coriolis force $\equiv-2m\omegab\times\vec{v}_{\text{m}}$, depends on the velocity of the particle.\\
+For the equation $\dotv{A}(t)=\omegab\times\vec{A}(t)+\vec{c}$, where $\omegab\perp\vec{c}$ are both constant vectors, the general solution of the ODE is: $\vec{A}(t)=R_{\vec{n}}(\omega t)\vec{u}+\frac{1}{\omega}\vec{n}\times\vec{c}$, with $\vec{u}\in\R^{3},\ \vec{n}=\omega^{-1}\omegab,\ $.
+
+
+\subsection{Motion of a particle relative to the rotating Earth}
+\subsubsection*{Basis vectors}
+\input{content/figure/earth}
+$\vec{e}_{1}=\sin\lambda\cos\varphi\vec{e}_{1}'+\sin\lambda\sin\varphi\vec{e}_{2}'-\cos{\lambda}\vec{e}_{3}'$,\\
+$\vec{e}_{2}=-\sin\varphi\vec{e}_{1}'+\cos\varphi\vec{e}_{2}'$,\\
+$\vec{e}_{3}=\cos\lambda\cos\varphi\vec{e}_{1}'+\cos\lambda\sin\varphi\vec{e}_{2}'+\sin{\lambda}\vec{e}_{3}'$.\\
+
+
+
+\subsubsection*{Kinetics \& Dynamics}
+$\omegab=\omega(-\cos{\lambda}\vec{e}_{1}+\sin{\lambda}\vec{e}_{3})$\\
+$\vec{g}_{0}=-\frac{GM}{R^{3}}\vec{R}=-\frac{GM}{R^{2}}\vec{e}_{3}\equiv -g_{0}\vec{e}_{3},\ g_{0}\simeq 9.8\  \text{m}\cdot\text{s}^{-2}$\\
+$\ddot{\vec{r}}=\vec{g}-2\omegab\times\dot{\vec{r}}-\omegab\times(\omegab\times\vec{r})$, where $\vec{g}=\vec{g}_{0}-\omegab\times(\omegab\times\vec{R})$.\\
+With additional force: $\ddot{\vec{r}}=\frac{\vec{F}}{m}+\vec{g}-2\omegab\times\dot{\vec{r}}-\omegab\times(\omegab\times\vec{r})$.\\
+The angle between $-\vec{e}_{3}$ and $\vec{g}$ is $\delta(\lambda)$, where $\tan{\delta(\lambda)}=\frac{\omega^{2}R\sin\lambda\cos\lambda}{g_{0}-\omega^{2}R\cos^{2}\lambda}$.\\
+Approximately, the equation of motion of a particle moving close to the Earth's surface, is given by $\vec{r}\simeq\vec{r}_{0}+\vec{v}_{0}t+\vec{g}_{0}\frac{t^{2}}{2}-t^{2}\omegab\times\vec{v}_{0}-\frac{t^{3}}{3}\omegab\times\vec{g}_{0}$.\\
+Sometimes, to approximate, we often ignore some terms inside the above equation because of the following ratio: $\frac{g_{0}}{\omega}\simeq1.35\cdot10^{5}\text{m s}^{-1}>>v_{0}$
+
+
+
+\subsection{Foucault's pendulum}
+Consists of a pendulum with length that is far greater than the coordinates $x,y,z$ of its bob. The equations of motion of the coordinates $x,y$ are:\\
+$\mdoubleline{\ddot{x}+\alpha^{2}x=2\omega\dot{y}\sin\lambda}{\ddot{y}+\alpha^{2}y=-2\omega\dot{x}\sin\lambda}$, where $\alpha\equiv\sqrt{\frac{g_{0}}{l}}$. The motion of the coordinate $z$ can be ignored. Letting $u=x+iy$, the general solution of $u$ is: 
+
+$u=e^{-i\Omega t}\Big(c_{1}e^{i\alpha t}+c_{2}e^{-i\alpha t}\Big),$ where $c_{1},c_{2}\in \C$ and $\Omega\equiv\omega\sin\lambda$.\\
+A solution with initial conditions $\mdoubleline{x(0)&=x_{0}>0,\ y(0)=0}{\dot{x}&=\dot{y}=0}$, would be: 
+
+$u=x_{0}e^{-i\Omega t}\cos(\alpha t)\then x=x_{0}\cos(\Omega t)\cos(\alpha t),\ y=-x_{0}\sin(\Omega t)\cos(\alpha t)$.\\
+The projection of the vector $\vec{r}$ onto the $X-Y$ plane is given by $x_{0}\cos(\alpha t)[\cos(\Omega t)\vec{e}_{1}-\sin(\Omega t)\vec{e}_{2}]$. In the northern hemisphere the pendulum's plane rotates clockwise, i.e., in the east-south direction (since $\dot{\theta}=-\Omega=-\omega\sin\lambda<0$), with angular velocity $\Omega =\omega\sin\lambda$. In the southern hemisphere the rotation of the pendulum's plane is counterclockwise (since $\sin\lambda<0$), and in the equator ($\lambda=0$) no such rotation occurs.\\
+In each period $2\pi/\alpha$ of the pendulum the angle between the pendulum's plane and. the $X-Y$ plane increases by $-2\pi\Omega/\alpha$, which is a very small quantity. The period of the rotation of the pendulum's plane is given by $\tau=\frac{2\pi}{\Omega}=\frac{2\pi}{\omega}\csc\lambda$ sidereal days.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

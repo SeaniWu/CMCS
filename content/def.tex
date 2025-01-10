@@ -1,0 +1,244 @@
+\definecolor{myblue}{cmyk}{1,.72,0,.38}
+\definecolor{myred}{cmyk}{0,.91,.79,.56}
+
+
+\DeclareMathAlphabet{\pazocal}{OMS}{zplm}{m}{n}
+\DeclareSymbolFont{bbold}{U}{bbold}{m}{n}
+\DeclareSymbolFontAlphabet{\mathbbold}{bbold}
+\DeclareMathSizes{5}{5}{4.2}{4}
+
+\def\firstcircle{(0,0) circle (1.5cm)}
+\def\secondcircle{(0:2cm) circle (1.5cm)}
+
+\colorlet{circle edge}{myblue}
+\colorlet{circle area}{myblue!5}
+
+\tikzset{filled/.style={fill=circle area, draw=circle edge, thick},
+    outline/.style={draw=circle edge, thick}}
+    
+\pgfdeclarelayer{background}
+\pgfsetlayers{background,main}
+
+%\everymath\expandafter{\the\everymath \color{myblue}}
+\everydisplay\expandafter{\the\everydisplay \color{myblue}}
+
+\renewcommand{\baselinestretch}{.8}
+\pagestyle{empty}
+
+\global\mdfdefinestyle{header}{%
+linecolor=gray,linewidth=1pt,%
+leftmargin=0mm,rightmargin=0mm,skipbelow=0mm,skipabove=0mm,
+}
+\makeatletter
+\newcommand*{\transpose}{%
+  {\mathpalette\@transpose{}}%
+}
+\newcommand*{\@transpose}[2]{%
+  % #1: math style
+  % #2: unused
+  \raisebox{\depth}{$\m@th#1\intercal$}%
+}
+\makeatother
+\newcommand{\header}{
+\begin{mdframed}[style=header]
+\footnotesize
+\sffamily
+CM~Cheat~Sheet\\
+Xiaoye~Wu,~Page~\thepage~of~2
+\end{mdframed}
+}
+
+\newcommand\myfigure[5]{%
+  \ifdim#2>.8\linewidth
+    {%
+      \centering
+      \includegraphics[width=#3]{#4}%
+      \captionof{figure}{#5}%
+    }%
+  \else
+  \begin{wrapfigure}{#1}{#2}
+    \includegraphics[width=#3]{#4}
+    \caption{#5}
+  \end{wrapfigure}
+  \fi
+}
+\AtBeginEnvironment{bmatrix}{\setlength{\arraycolsep}{1pt}}
+\def\scaleint#1{\vcenter{\hbox{\scaleto[3ex]{\displaystyle\int}{#1}}}}
+\renewcommand{\dot}[1]{
+  \accentset{\mbox{\bfseries .}}{#1}}
+\renewcommand{\bold}[1]{\textbf{#1}}
+\renewcommand{\vec}[1]{{\color{myblue}\bold{#1}}}
+\newcommand{\dv}[1]{\dot{\vec{#1}}}
+\newcommand{\bfemph}[1]{\textbf{\emph{#1}}}
+\newcommand{\hlb}[1]{{\sethlcolor{LightBlue}\hl{#1}}}
+\newcommand{\partials}[2]{\frac{\partial #1}{\partial #2}}
+\newcommand*\then[1][\text{}]{\mathrel{\stackrel{\makebox[0pt]{\mbox{\normalfont\tiny #1}}}{\Rightarrow}}}
+\newcommand{\smol}[1]{{\fontsize{4}{5}\selectfont #1 }}
+\newcommand{\ssmol}[1]{{\fontsize{3}{4}\selectfont #1 }}
+\newcommand{\R}{\mathbb{R}}  
+\newcommand{\Z}{\mathbb{Z}}
+\renewcommand{\d}{\text{d}}
+\newcommand{\C}{\mathbb{C}}
+\newcommand{\sech}[1]{\text{sech}{#1}}
+\newcommand{\csch}[1]{\text{csch}{#1}}
+\newcommand{\N}{\mathbb{N}}
+\newcommand{\Q}{\mathbb{Q}}
+\newcommand{\K}{\mathbb{K}}
+\newcommand{\Ss}{\pazocal{S}}
+\newcommand{\omegab}[0]{\color{myblue}{\vect{\upomega}}}
+\newcommand{\pbrac}[2]{\{#1,#2\}}
+\newcommand{\tqp}[0]{(t,\vec{q},\vec{p})}
+\newcommand{\dif}[2]{\frac{\text{d} #1}{\text{d} #2}}
+\newcommand{\diff}[1]{\Big(\frac{\text{d} #1}{\text{d}t}\Big)_{\text{f}}}
+\newcommand{\difm}[1]{\Big(\frac{\text{d} #1}{\text{d}t}\Big)_{\text{m}}}
+\newcommand{\vect}[1]{\boldsymbol{\mathbf{#1}}}
+\newcommand{\ext}{^{(\text{e})}}
+\renewcommand{\epsilon}{\varepsilon}
+
+
+\makeatletter 
+\renewcommand{\section}{\@startsection{section}{1}{0mm}%
+                                {.2ex}%
+                                {.2ex}%xion
+                                {\color{myblue}\sffamily\small\bfseries}}
+\renewcommand{\subsection}{\@startsection{subsection}{1}{0mm}%
+                                {.2ex}%
+                                {.2ex}%x
+                                {\sffamily\fontsize{6}{5}\selectfont\bfseries}}
+\renewcommand{\subsubsection}{\@startsection{subsubsection}{1}{0mm}%
+                                {.2ex}%
+                                {.2ex}%x
+                                {\color{myblue}\sffamily\tiny\bfseries}}
+\newcommand{\subcolorsection}[1]{%
+	\colorbox{green!10}{\parbox[t][0em]{\dimexpr\columnwidth-2\fboxsep}{\thesubsection\ #1}}}
+\newcommand{\ELt}[2]{\frac{\text{d}}{\text{d}t}\frac{\partial #1}{\partial \dot{#2}}-\frac{\partial #1}{\partial #2}}
+\newcommand{\mdoubleline}[2]{\left\{
+                \begin{array}{ll}
+                  #1\\
+                  #2\\
+                \end{array}
+              \right.
+  }
+\newcommand{\mdoublelineone}[1]{\left\{
+                \begin{array}{ll}
+                  #1\\
+                \end{array}
+              \right.
+  }
+
+
+
+\def\multi@column@out{%
+   \ifnum\outputpenalty <-\@M
+   \speci@ls \else
+   \ifvoid\colbreak@box\else
+     \mult@info\@ne{Re-adding forced
+               break(s) for splitting}%
+     \setbox\@cclv\vbox{%
+        \unvbox\colbreak@box
+        \penalty-\@Mv\unvbox\@cclv}%
+   \fi
+   \splittopskip\topskip
+   \splitmaxdepth\maxdepth
+   \dimen@\@colroom
+   \divide\skip\footins\col@number
+   \ifvoid\footins \else
+      \leave@mult@footins
+   \fi
+   \let\ifshr@kingsaved\ifshr@king
+   \ifvbox \@kludgeins
+     \advance \dimen@ -\ht\@kludgeins
+     \ifdim \wd\@kludgeins>\z@
+        \shr@nkingtrue
+     \fi
+   \fi
+   \process@cols\mult@gfirstbox{%
+%%%%% START CHANGE
+\ifnum\count@=\numexpr\mult@rightbox+2\relax
+          \setbox\count@\vsplit\@cclv to \dimexpr \dimen@-1cm\relax
+\setbox\count@\vbox to \dimen@{\vbox to 1cm{\header}\unvbox\count@\vss}%
+\else
+      \setbox\count@\vsplit\@cclv to \dimen@
+\fi
+%%%%% END CHANGE
+            \set@keptmarks
+            \setbox\count@
+                 \vbox to\dimen@
+                  {\unvbox\count@
+                   \remove@discardable@items
+                   \ifshr@nking\vfill\fi}%
+           }%
+   \setbox\mult@rightbox
+       \vsplit\@cclv to\dimen@
+   \set@keptmarks
+   \setbox\mult@rightbox\vbox to\dimen@
+          {\unvbox\mult@rightbox
+           \remove@discardable@items
+           \ifshr@nking\vfill\fi}%
+   \let\ifshr@king\ifshr@kingsaved
+   \ifvoid\@cclv \else
+       \unvbox\@cclv
+       \ifnum\outputpenalty=\@M
+       \else
+          \penalty\outputpenalty
+       \fi
+       \ifvoid\footins\else
+         \PackageWarning{multicol}%
+          {I moved some lines to
+           the next page.\MessageBreak
+           Footnotes on page
+           \thepage\space might be wrong}%
+       \fi
+       \ifnum \c@tracingmulticols>\thr@@
+                    \hrule\allowbreak \fi
+   \fi
+   \ifx\@empty\kept@firstmark
+      \let\firstmark\kept@topmark
+      \let\botmark\kept@topmark
+   \else
+      \let\firstmark\kept@firstmark
+      \let\botmark\kept@botmark
+   \fi
+   \let\topmark\kept@topmark
+   \mult@info\tw@
+        {Use kept top mark:\MessageBreak
+          \meaning\kept@topmark
+         \MessageBreak
+         Use kept first mark:\MessageBreak
+          \meaning\kept@firstmark
+        \MessageBreak
+         Use kept bot mark:\MessageBreak
+          \meaning\kept@botmark
+        \MessageBreak
+         Produce first mark:\MessageBreak
+          \meaning\firstmark
+        \MessageBreak
+        Produce bot mark:\MessageBreak
+          \meaning\botmark
+         \@gobbletwo}%
+   \setbox\@cclv\vbox{\unvbox\partial@page
+                      \page@sofar}%
+   \@makecol\@outputpage
+     \global\let\kept@topmark\botmark
+     \global\let\kept@firstmark\@empty
+     \global\let\kept@botmark\@empty
+     \mult@info\tw@
+        {(Re)Init top mark:\MessageBreak
+         \meaning\kept@topmark
+         \@gobbletwo}%
+   \global\@colroom\@colht
+   \global \@mparbottom \z@
+   \process@deferreds
+   \@whilesw\if@fcolmade\fi{\@outputpage
+      \global\@colroom\@colht
+      \process@deferreds}%
+   \mult@info\@ne
+     {Colroom:\MessageBreak
+      \the\@colht\space
+              after float space removed
+              = \the\@colroom \@gobble}%
+    \set@mult@vsize \global
+  \fi}
+
+\makeatother
+\setlength{\parindent}{0pt}

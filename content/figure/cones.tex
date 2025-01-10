@@ -1,0 +1,123 @@
+\pgfmathsetmacro{\xrot}{70} 
+\pgfmathsetmacro{\zrot}{120}
+\tdplotsetmaincoords{\xrot}{\zrot}
+\pgfmathsetmacro{\rvec}{1.4} 
+\pgfmathsetmacro{\rvecp}{0.9} 
+\pgfmathsetmacro{\thetavec}{20} 
+\pgfmathsetmacro{\thetavecp}{40} 
+\pgfmathsetmacro{\phivec}{120}
+\pgfmathsetmacro{\alphago}{\thetavecp-\thetavec}
+\pgfmathsetmacro{\tanalpha}{tan(\alphago)}
+\pgfmathsetmacro{\cosalphainv}{1/cos(\alphago)}
+\pgfmathsetmacro{\cosphi}{cos(\phivec)}
+\pgfmathsetmacro{\costheta}{cos(\thetavec)}
+\pgfmathsetmacro{\sintheta}{sin(\thetavec)}
+\pgfmathsetmacro{\sinphi}{sin(\phivec)}
+\begin{tikzpicture}[scale=0.7,tdplot_main_coords]
+\coordinate (O) at (0,0,0);
+\def\l{0.8}
+\def\d{1.8}
+\tdplotsetcoord{P}{\rvec}{\thetavec}{\phivec} 
+\tdplotsetcoord{Q}{\rvec}{\thetavec}{\phivec-180}
+\tdplotsetcoord{S}{\rvecp*\cosalphainv}{\thetavec}{\phivec}
+\tdplotsetcoord{T}{\rvecp}{\thetavecp}{\phivec}
+\tdplotsetcoord{U}{\rvecp*\cosalphainv}{\thetavecp+\alphago}{\phivec}
+\tdplotsetcoord{E}{1.9}{\thetavec}{\phivec}
+
+\draw[color=black] (O) -- (P)  node[near end,anchor=north]{}; 
+\draw[color=black] (O) -- (Q)  node[near end,anchor=north]{};
+
+%\draw[dashed] (0,0,0) -- (\rvec,0,0) node[anchor=north east]{};
+\draw[] (0,0,0) -- (\d,0,0) node[anchor=north east]{$x'$};
+%\draw[dashed] (0,0,0) -- (0,\rvec,0) node[anchor= west]{};
+\draw[] (0,0,0) -- (0,\d,0) node[anchor= west]{$y'$};
+\draw[] (0,0,0) -- (0,0,\d-0.1) node[anchor=west]{$z'$};
+
+%\tdplotdrawarc[]{(O)}{\rvec}{\zrot-180}{\zrot}{anchor=north}{}
+%\tdplotdrawarc[dashed]{(O)}{\rvec}{\zrot}{\zrot+180}{anchor=north}{}
+
+\tdplotdrawarc[color=black]{(Pz)}{\rvec*\sintheta}{0}{360}{anchor=north}{}
+%\tdplotdrawarc[]{(O)}{0.2}{0}{\phivec}{anchor=north}{$\varphi$}
+\tdplotsetthetaplanecoords{\phivec}
+%\tdplotdrawarc[tdplot_rotated_coords]{(0,0,0)}{0.2}{0}{\thetavec}{anchor=east}{$\theta$}
+%\draw[dashed] (0,0,0) -- (\rvec*\cosphi,\rvec*\sinphi,0);
+%\draw[tdplot_rotated_coords] (\rvec,0,0) arc (0:90:\rvec); 
+\tdplotsetrotatedcoords{\phivec}{\thetavecp}{0}
+\tdplotsetrotatedcoordsorigin{(O)}
+%\draw[color=myblue,tdplot_rotated_coords,->] (0,0,0) -- (\l,0,0) node[anchor=north west]{$\vec{e}_{\theta}$};
+%\draw[color=myblue,tdplot_rotated_coords,->] (0,0,0) -- (0,\l,0) node[anchor=west]{$\vec{e}_{\varphi}$};
+\draw[color=myblue,tdplot_rotated_coords] (0,0,0)
+-- (0,0,\d) node[anchor=south west]{$\vec{e}_{3}$};
+\draw[color=myblue,tdplot_rotated_coords] (T)
+circle (\rvecp*\tanalpha) node[anchor=south]{};
+\draw[color=myblue] (S) -- (O);
+\draw[color=myblue] (U) -- (O);
+\node[black,tdplot_screen_coords] at (-1,0.5,0){Space cone};
+\node[myblue,tdplot_screen_coords] at (1,0.1,0){Body cone};
+\draw[color=myblue,-latex,thick] (S) -- (E) node[anchor=south]{$\omega$};
+\draw[color=myblue,-latex,thick] (Pz) -- (0,0,1.9) node[anchor=south]{$\vec{L}$};
+
+%\draw[tdplot_screen_coords] (O) circle (\rvec);
+\end{tikzpicture}
+\qquad
+\begin{tikzpicture}[scale=0.7,tdplot_main_coords]
+\pgfmathsetmacro{\xrot}{70} 
+\pgfmathsetmacro{\zrot}{120}
+\tdplotsetmaincoords{\xrot}{\zrot}
+\pgfmathsetmacro{\rvec}{1.4} 
+\pgfmathsetmacro{\rvecp}{0.5} 
+\pgfmathsetmacro{\thetavec}{20} 
+\pgfmathsetmacro{\thetavecp}{40} 
+\pgfmathsetmacro{\phivec}{120}
+\pgfmathsetmacro{\alphago}{\thetavecp+\thetavec}
+\pgfmathsetmacro{\tanalpha}{tan(\alphago)}
+\pgfmathsetmacro{\cosalphainv}{1/cos(\alphago)}
+\pgfmathsetmacro{\cosphi}{cos(\phivec)}
+\pgfmathsetmacro{\costheta}{cos(\thetavec)}
+\pgfmathsetmacro{\sintheta}{sin(\thetavec)}
+\pgfmathsetmacro{\sinphi}{sin(\phivec)}
+\coordinate (O) at (0,0,0);
+\def\l{0.8}
+\def\d{1.8}
+\tdplotsetcoord{P}{\rvec}{\thetavec}{\phivec} 
+\tdplotsetcoord{Q}{\rvec}{\thetavec}{\phivec-180}
+\tdplotsetcoord{S}{\rvecp*\cosalphainv}{-\thetavec}{\phivec}
+\tdplotsetcoord{T}{\rvecp}{\thetavecp}{\phivec}
+\tdplotsetcoord{U}{\rvecp*\cosalphainv}{\thetavecp+\alphago}{\phivec}
+\tdplotsetcoord{E}{2}{-\thetavec}{\phivec}
+
+\draw[color=black] (O) -- (P)  node[near end,anchor=north]{}; 
+\draw[color=black] (O) -- (Q)  node[near end,anchor=north]{};
+
+%\draw[dashed] (0,0,0) -- (\rvec,0,0) node[anchor=north east]{};
+\draw[] (0,0,0) -- (\d,0,0) node[anchor=north east]{$x'$};
+%\draw[dashed] (0,0,0) -- (0,\rvec,0) node[anchor= west]{};
+\draw[] (0,0,0) -- (0,\d,0) node[anchor= west]{$y'$};
+\draw[] (0,0,0) -- (0,0,\d-0.1) node[anchor=west]{$z'$};
+
+%\tdplotdrawarc[]{(O)}{\rvec}{\zrot-180}{\zrot}{anchor=north}{}
+%\tdplotdrawarc[dashed]{(O)}{\rvec}{\zrot}{\zrot+180}{anchor=north}{}
+
+\tdplotdrawarc[color=black]{(Pz)}{\rvec*\sintheta}{0}{360}{anchor=north}{}
+%\tdplotdrawarc[]{(O)}{0.2}{0}{\phivec}{anchor=north}{$\varphi$}
+\tdplotsetthetaplanecoords{\phivec}
+%\tdplotdrawarc[tdplot_rotated_coords]{(0,0,0)}{0.2}{0}{\thetavec}{anchor=east}{$\theta$}
+%\draw[dashed] (0,0,0) -- (\rvec*\cosphi,\rvec*\sinphi,0);
+%\draw[tdplot_rotated_coords] (\rvec,0,0) arc (0:90:\rvec); 
+\tdplotsetrotatedcoords{\phivec}{\thetavecp}{0}
+\tdplotsetrotatedcoordsorigin{(O)}
+%\draw[color=myblue,tdplot_rotated_coords,->] (0,0,0) -- (\l,0,0) node[anchor=north west]{$\vec{e}_{\theta}$};
+%\draw[color=myblue,tdplot_rotated_coords,->] (0,0,0) -- (0,\l,0) node[anchor=west]{$\vec{e}_{\varphi}$};
+\draw[color=myblue,tdplot_rotated_coords] (0,0,0)
+-- (0,0,\d) node[anchor=south west]{$\vec{e}_{3}$};
+\draw[color=myblue,tdplot_rotated_coords] (T)
+circle (\rvecp*\tanalpha) node[anchor=south]{};
+\draw[color=myblue] (S) -- (O);
+\draw[color=myblue] (U) -- (O);
+\node[black,tdplot_screen_coords] at (-1,0.5,0){Space cone};
+\node[myblue,tdplot_screen_coords] at (1.2,0.4,0){Body cone};
+\draw[color=myblue,-latex,thick] (S) -- (E) node[anchor=south]{$\omega$};
+\draw[color=myblue,-latex,thick] (Pz) -- (0,0,1.9) node[anchor=south]{$\vec{L}$};
+
+%\draw[tdplot_screen_coords] (O) circle (\rvec);
+\end{tikzpicture}

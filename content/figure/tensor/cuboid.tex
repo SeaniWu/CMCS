@@ -1,0 +1,28 @@
+\pgfmathsetmacro{\xrot}{70} 
+\pgfmathsetmacro{\zrot}{110}
+\tdplotsetmaincoords{\xrot}{\zrot}
+\pgfmathsetmacro{\h}{0.3} 
+\pgfmathsetmacro{\w}{0.5} 
+\pgfmathsetmacro{\d}{0.6}
+\pgfmathsetmacro{\l}{1}
+\begin{tikzpicture}[scale=0.3,tdplot_main_coords,baseline=0]
+\coordinate (O) at (0,0,0);
+\coordinate (Q) at (\d,-\w,\h);
+\coordinate (W) at (\d,\w,\h);
+\coordinate (E) at (-\d,\w,\h);
+\coordinate (R) at (-\d,-\w,\h);
+\coordinate (T) at (\d,-\w,-\h);
+\coordinate (Y) at (\d,\w,-\h);
+\coordinate (U) at (-\d,\w,-\h);
+\coordinate (I) at (-\d,-\w,-\h);
+\draw[->] (O) -- (1.75,0,0) node[anchor=north east]{$x$};
+\draw[->] (O) -- (0,1.5,0) node[anchor=north east]{$y$};
+\draw[->] (O) -- (0,0,\l) node[anchor=north east]{$\omegab$};
+\draw (Q) -- (W) -- (E) -- (R) -- (Q) -- (T) -- (Y) -- (U) -- (E);
+\draw[] (Q) -- (T) node[midway, anchor=east]{$h$};
+\draw[] (Q) -- (R) node[midway, anchor=south east]{$d$};
+\draw[] (E) -- (R) node[midway, anchor=south west]{$w$};
+\draw (W) -- (Y);
+\draw[dashed] (R) -- (I) -- (U);
+\draw[dashed] (I) -- (T);
+\end{tikzpicture}
