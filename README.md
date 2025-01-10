@@ -1,9 +1,9 @@
 ## Classical Mechanics LaTeX Cheatsheet
 
 # No Responsibility Disclaimer
-The Classical Mechanics Cheat Sheet provided on this GitHub repository is intended **solely for educational purposes**. I, the author, make no guarantees regarding the completeness, accuracy, or applicability of the content.
-By using this cheat sheet, you acknowledge and agree that I am **not responsible** for any outcomes related to tests, exams, or any other academic activities that you undertake using this material as an aid. The use of this cheat sheet is **at your own risk**, and I shall **not be liable** for any consequences arising from its use.
-It is recommended that you **verify any information and consult additional resources or instructors** for comprehensive understanding and guidance in your studies.
+- The Classical Mechanics Cheat Sheet provided on this GitHub repository is intended **solely for educational purposes**. I, the author, make no guarantees regarding the completeness, accuracy, or applicability of the content.
+- By using this cheat sheet, you acknowledge and agree that I am **not responsible** for any outcomes related to tests, exams, or any other academic activities that you undertake using this material as an aid. The use of this cheat sheet is **at your own risk**, and I shall **not be liable** for any consequences arising from its use.
+- It is recommended that you **verify any information and consult additional resources or instructors** for comprehensive understanding and guidance in your studies.
 
 # WARNING
 - Due to changes to some TeX packages, the original template by https://github.com/kenfehling/latex-cheatsheet **does not render correctly** under current mainstream LaTeX distros.
