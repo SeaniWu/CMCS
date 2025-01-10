@@ -9,6 +9,7 @@
 - Due to changes to some TeX packages, the original template by https://github.com/kenfehling/latex-cheatsheet **does not render correctly** under current mainstream LaTeX distros.
 - This is a revised edition that fixes the aforementioned problem, but may have introduced new compiling errors and inaccuracies caused by discrepancies of commands that the I have defined throughout the years. Reports about potential errors in the comment section are welcome. I do intend to complete and optimize the content structure of this project in the future.
 - The original 2019 PDF file that was rendered using the original template is also included.
+- It is recommended to compile this project using pdfLaTeX, as compiling using XeLaTeX and LuaLaTeX may have command conflicts
 
 # 经典力学 LaTeX 速查表
 
@@ -21,3 +22,4 @@
 -  由于某些 TeX packages 的更改，https://github.com/kenfehling/latex-cheatsheet 的原始模板**在当前主流 LaTeX 发行版中无法正确渲染**。
 -  此修订版修复了上述问题，但可能引入了新的编译错误和不准确性，这些错误和不准确性是由于我多年来定义的命令之间的不一致造成的。欢迎在评论区申报潜在错误。我打算在未来完成并优化该项目的内容结构。
 -  本repository也包含使用原始模板渲染的 2019 原始 PDF 文件。
+-   建议使用 pdfLaTeX 编译此项目，因为使用 XeLaTeX 和 LuaLaTeX 可能会出现命令冲突。
