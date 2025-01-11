@@ -3,32 +3,40 @@
 
 
 \subsection{Newton's Laws}
-   \textbf{1.} In the absence of external forces, the momentum of a particle remains constant.\\
-   \textbf{2.} If an external force $\vec{F}$ acts on a particle, the rate of variation of its momentum is give by $\dot{\vec{p}}=\vec{F}\iff \vec{F}=m\ddot{\vec{r}}(\Leftarrow$ eqn. of motion of a particle).
+\textbf{\color{myblue} I.} In the absence of external forces, the momentum of a particle remains constant.
 
-
+\textbf{\color{myblue} II.} If an external force $\vec{F}$ acts on a particle, the rate of variation of its momentum is given by $\dot{\vec{p}}=\vec{F}\iff \vec{F}=m\ddot{\vec{r}}$ ($\Leftarrow$ eqn. of motion of a particle).
 
 
 \subsection{Conservation laws}
 
 
-
 \subsubsection*{Basic definitions}
-$\vec{L}=\vec{r}\times\vec{p}=m\vec{r}\times\dotv{r},\ \ \ \ \dotv{L}=\vec{N}=\vec{r}\times\vec{F}=0\iff \vec{F}\parallel\vec{r}$.\\
-A force is central $\iff \vec{F}=g(t,\vec{r},\dotv{r})\vec{r}$. Let $T=\frac{1}{2}m\dotv{r}^{2}$, then $\dv{T}{t}=m\dotv{r}\ddot{\vec{r}}=\vec{F}\dotv{r}$\\
-Kinetic energy is conserved $\iff$ $\vec{F}\perp\dotv{r},\ \forall t$.\\
-A force is conservative $\iff \vec{F}(\vec{r})=-\nabla V(\vec{r})\equiv-\sum\limits_{i=1}^{3}\partials{V(\vec{r})}{x_{i}}\vec{e}_{i}\equiv-\partials{V(\vec{r})}{\vec{r}}$.\\
-If $\vec{F}$ conservative, then $E=T+V$ conserved.\\
-A force is irrotational $\iff \exists V(t,\vec{r})$ s.t. $\vec{F}(t,\vec{r})=-\partials{V(t,\vec{r})}{\vec{r}}\then \dv{E}{t}=\partials{V}{t}$.
+$\vec{L}=\vec{r}\times \vec{p}=m\vec{r}\times \dotv{r},\hsma \dotv{L}=\vec{N}=\vec{r}\times \vec{F}=0\iff \vec{F}\parallel \vec{r}.$\com{Angular momentum}
+
+$T=\frac{1}{2}m\dotv{r}^{2}, \dv{T}{t}=m\dotv{r}\ddot{\vec{r}}=\vec{F}\dotv{r}$, $T$ is conserved $\iff$ $\vec{F}\perp\dotv{r},\ \forall t$.\hfill \com{Kinetic energy}
+
+If $\exists g(t,\vec{r},\dotv{r})$ s.t. $\vec{F}=g(t,\vec{r},\dotv{r})\vec{r}$, then $\vec{F}$ is central. \hfill \com{Central force}
+
+If $\exists V(\vec{r})$ s.t. $\vec{F}(\vec{r})=-\nabla V(\vec{r})$, then $\vec{F}$ is conservative.\hfill \com{Conservative force}
+
+If $\vec{F}$ conservative, then $E=T+V$ conserved.\com{Conservation of energy}
+
+If $\exists V(t,\vec{r})$ s.t. $\vec{F}(t,\vec{r})=-\partials{V(t,\vec{r})}{\vec{r}}$, then $\vec{F}$ is irrotational.\com{Irrotational force}
+
+If $\vec{F}$ irrotational, then $\dv{E}{t}=\pdv{V}{t}$.
 
 
 
 \subsubsection*{Gravitational and Electrostatic forces}
 $\vec{F}=f(r)\vec{e}_{r}$\\
-$f(r)=-\frac{GMm}{r^{2}},\ V(r)=-\frac{GMm}{r}\then \vec{a}=\frac{\vec{F}}{m}=-\frac{GM}{r^{3}}\vec{r}$ independent of $m$.\\
-$f(r)=k\frac{qQ}{r^{2}},\ V(r)=k\frac{qQ}{r}$.\\
-In general, for forces between a particle and a continuous distribution of mass/charge:\\
-$\vec{F}(\vec{r})=-Gm\scaleint{5ex}\rho(\vec{r}')\frac{\vec{r}-\vec{r}'}{|\vec{r}-\vec{r}'|^{3}}\dd[3]{\vec{r}}=-m\partials{\Phi(\vec{r})}{\vec{r}},\ \Phi(\vec{r})=-G\scaleint{5ex}\frac{\rho(\vec{r'})}{|\vec{r}-\vec{r}'|}\dd[3]{\vec{r}}$\\
+$f(r)=-\frac{GMm}{r^{2}},\hsma V(r)=-\frac{GMm}{r}$.\com{Gravitational force}\\
+$\then \vec{a}=\frac{\vec{F}}{m}=-\frac{GM}{r^{3}}\vec{r}$ is independent of $m$\\
+$f(r)=k\frac{qQ}{r^{2}},\hsma V(r)=k\frac{qQ}{r}$.\com{Electrostatic force}\\
+In general, for forces between a particle and a continuous distribution of mass/charge:
+
+$\vec{F}(\vec{r})=-Gm\scaleint{5ex}\rho(\vec{r}')\frac{\vec{r}-\vec{r}'}{|\vec{r}-\vec{r}'|^{3}}\dd[3]{\vec{r}}=-m\partials{\Phi(\vec{r})}{\vec{r}},\ \Phi(\vec{r})=-G\scaleint{5ex}\frac{\rho(\vec{r'})}{|\vec{r}-\vec{r}'|}\dd[3]{\vec{r}}$
+
 $\vec{F}(\vec{r})=-kq\scaleint{5ex}\rho(\vec{r}')\frac{\vec{r}-\vec{r}'}{|\vec{r}-\vec{r}'|^{3}}\dd[3]{\vec{r}}=-q\partials{\Phi(\vec{r})}{\vec{r}},\ \Phi(\vec{r})=-k\scaleint{5ex}\frac{\rho(\vec{r'})}{|\vec{r}-\vec{r}'|}\dd[3]{\vec{r}}$
 
 
@@ -40,8 +48,7 @@ $\vec{F}(t,\vec{r},\dotv{r})=q(\vec{E}(t,\vec{r})+\dotv{r}\times\vec{B}(t,\vec{r
 
 
 \subsection{Motion of a particle in a one-dimensional potential}
-Law of conservation of energy: $\frac{1}{2}m\dot{x}^{2}+V(x)=E\then \dot{x}(m\ddot{x}-F(x))=0$\\
-$\ $\hfill(if $\dot{x}\neq0\then m\ddot{x}-F(x)=0$).\\
+$\frac{1}{2}m\dot{x}^{2}+V(x)=E, \dot{x}(m\ddot{x}-F(x))=0$, (if $\dot{x}\neq0\then m\ddot{x}-F(x)=0$).\\
 Said ODE is an \textbf{autonomous system} (i.e. it's of the form $\ddot{x}=f(x,\dot{x})$), and it's thus invariant under transformations $t\to t+c$ and $t\to -t$.
 
 \subsubsection*{Equilibrium, and trajectory}

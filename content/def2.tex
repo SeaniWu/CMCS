@@ -1,12 +1,8 @@
-\definecolor{myblue}{cmyk}{1,.72,0,.38}
+\definecolor{myblue}{cmyk}{.9932,.3041,0,.4196}
+% \def\firstcircle{(0,0) circle (1.5cm)}
+% \def\secondcircle{(0:2cm) circle (1.5cm)}
 
-\def\firstcircle{(0,0) circle (1.5cm)}
-\def\secondcircle{(0:2cm) circle (1.5cm)}
-
-\colorlet{circle edge}{myblue}
-\colorlet{circle area}{myblue!5}
-
-\tikzset{filled/.style={fill=circle area, draw=circle edge, thick},
+\tikzset{filled/.style={fill=myblue, fill opacity=0.5, draw=black},
     outline/.style={draw=circle edge, thick}}
     
 \pgfdeclarelayer{background}
