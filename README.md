@@ -1,4 +1,4 @@
-Comprehensive Classical Mechanics Cheat Sheet
+# Comprehensive Classical Mechanics Cheat Sheet
 
 ![Portion of the first page of the cheat sheet](https://i.imgur.com/1KzlAAu.png)
 Note: 
