@@ -1,3 +1,7 @@
+Comprehensive Classical Mechanics Cheat Sheet
+
+![Portion of the first page of the cheat sheet][https://imgur.com/1KzlAAu]
+
 Note: 
 
 1. This is a forked repository of the original. 
