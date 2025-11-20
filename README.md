@@ -1,5 +1,7 @@
-## Template for a very compact LaTeX Cheatsheet
+Note: 
 
-![page 1](https://i.stack.imgur.com/jEcrv.png)
+1. This is a forked repository of the original. 
 
-![page 2](https://i.stack.imgur.com/jq4dI.png)
+2. The original header of the cheat sheet is not working due to compatibility issues with the current LaTeX versions.
+
+3. There may be errors and inconsistencies within this cheatsheet. The author does not bear responsiblities for any consequences caused by these errors.
